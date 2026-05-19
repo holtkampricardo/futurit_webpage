@@ -1,0 +1,77 @@
+/* futurit launch site — complemento a Tailwind CDN */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.site-logo-link {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.site-logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  max-width: min(200px, 52vw);
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: #f8fafc;
+}
+
+.hero-section {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.18), transparent 70%),
+    #09090f;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, #1a1a28 0%, #14141f 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-card:hover {
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 24px 48px -20px rgba(139, 92, 246, 0.35);
+}
+
+.mock-card {
+  background: #14141f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.bar-base {
+  background: linear-gradient(90deg, #a78bfa, #8b5cf6);
+}
+.bar-opt {
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+}
+.bar-pes {
+  background: linear-gradient(90deg, #fb7185, #f43f5e);
+}
+
+#modal-content a {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+#modal-content p {
+  margin-bottom: 0.75rem;
+}
+
+#modal-content br {
+  display: block;
+  content: '';
+  margin-top: 0.5rem;
+}
+
+#cookie-banner:not(.hidden) {
+  display: block;
+}
+
+input[type='email']:focus {
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35);
+}

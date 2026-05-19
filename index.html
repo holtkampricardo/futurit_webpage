@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futurit – Simulador patrimonial personal</title>
+  <meta name="description" content="Futurit te ayuda a visualizar tu patrimonio, activos, metas y escenarios financieros. Datos en tu dispositivo. Próximamente en iOS.">
+  <meta name="keywords" content="Futurit, patrimonio, simulación financiera, activos, metas, escenarios, app iOS, planificación patrimonial">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.getfuturit.app/">
+  <meta property="og:title" content="Futurit – Simulador patrimonial personal">
+  <meta property="og:description" content="Visualiza tu patrimonio, activos, metas y escenarios. Próximamente en iOS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.getfuturit.app/">
+  <meta property="og:image" content="https://www.getfuturit.app/assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Futurit – Simulador patrimonial personal">
+  <meta name="twitter:description" content="Visualiza tu patrimonio, activos, metas y escenarios. Próximamente en iOS.">
+  <meta name="twitter:image" content="https://www.getfuturit.app/assets/logo.png">
+  <meta name="theme-color" content="#09090f">
+  <link rel="icon" type="image/png" href="./assets/icon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{brand:"#8b5cf6","brand-light":"#a78bfa",surface:"#14141f",muted:"#94a3b8"}}}};</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    body{font-family:Inter,sans-serif;background:#09090f;color:#f8fafc}
+    .btn-brand{background:linear-gradient(135deg,#8b5cf6,#a78bfa);color:#fff;transition:.3s;box-shadow:0 4px 20px -4px rgba(139,92,246,.65)}
+    .btn-brand:hover{transform:translateY(-2px)}
+    .hero-section{position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,.18),transparent 70%),#09090f}
+    #particle-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+    .hero-content{position:relative;z-index:1}
+    .feature-card{background:linear-gradient(145deg,#1a1a28,#14141f);border:1px solid rgba(255,255,255,.08);transition:.3s;border-radius:1rem;padding:1.75rem}
+    .feature-card:hover{transform:translateY(-6px);border-color:rgba(139,92,246,.45)}
+    .mock-card{background:#14141f;border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 40px rgba(0,0,0,.45);border-radius:16px}
+    .parallax-container{perspective:1000px;position:relative;width:100%;height:420px}
+    .parallax-item{position:absolute;transition:transform .12s ease-out}
+    .modal-link{cursor:pointer;color:#a78bfa;text-decoration:underline}
+    .modal-link:hover{color:#c4b5fd}
+    .disclaimer-box{background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25)}
+    #cookie-banner{box-shadow:0 -4px 24px rgba(0,0,0,.35)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Futurit",
+    "url": "https://www.getfuturit.app/",
+    "description": "Simulador patrimonial personal: visualiza activos, metas y escenarios. Herramienta educativa; no es asesoramiento financiero regulado.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "iOS",
+    "image": "https://www.getfuturit.app/assets/logo.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Futurit",
+    "url": "https://www.getfuturit.app/",
+    "logo": "https://www.getfuturit.app/assets/logo.png",
+    "sameAs": ["https://www.instagram.com/getfuturit/"]
+  }
+  </script>
+</head>
+<body class="antialiased">
+
+<header class="py-5 px-4 sm:px-6 border-b border-white/5 bg-[#09090f]/90 backdrop-blur sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="./" class="site-logo-link" aria-label="Futurit — inicio">
+      <img src="./assets/logo.png" alt="Futurit" class="site-logo" width="200" height="88">
+    </a>
+    <div class="flex items-center gap-4">
+      <a href="./privacidad.html" class="hidden sm:inline text-sm text-muted hover:text-white" data-lang="nav-privacy">Privacidad</a>
+      <a href="#cta" class="btn-brand font-semibold py-2 px-5 rounded-full text-sm" data-lang="notify-me">Avísame</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-section text-center py-20 sm:py-28 px-4">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content max-w-4xl mx-auto">
+    <p class="text-[#a78bfa] font-semibold text-sm uppercase tracking-widest mb-4" data-lang="hero-badge">Simulación patrimonial</p>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-5 leading-tight" data-lang="hero-title">Haz crecer tu visión del patrimonio</h1>
+    <p class="text-lg sm:text-xl text-[#94a3b8] mb-4 max-w-2xl mx-auto" data-lang="hero-subtitle">Activos, metas, escenarios y coach de IA opcional. Tus datos, en tu iPhone.</p>
+    <p class="text-sm text-[#94a3b8]/80 mb-8" data-lang="hero-coming">Próximamente en iOS</p>
+    <a href="#cta" class="btn-brand text-lg font-bold py-4 px-10 rounded-full inline-block" data-lang="notify-me-cta">Avísame cuando esté disponible</a>
+    <p class="disclaimer-box text-xs text-amber-200/90 rounded-xl px-4 py-3 mt-10 max-w-xl mx-auto" data-lang="hero-disclaimer">Futurit es una herramienta educativa de simulación. No ofrece asesoramiento financiero ni de inversión regulado.</p>
+  </div>
+</section>
+
+<section id="features" class="py-20 border-y border-white/5 bg-[#14141f]/40">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <h2 class="text-3xl sm:text-4xl font-bold" data-lang="features-title">¿Qué puedes hacer con Futurit?</h2>
+      <p class="text-[#94a3b8] mt-4 max-w-2xl mx-auto" data-lang="features-subtitle">Todo para modelar tu futuro financiero sin hojas de cálculo.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="feature-card text-center">
+        <div class="mb-4 inline-block p-4 bg-violet-500/10 rounded-xl">
+          <svg class="h-8 w-8 text-[#a78bfa] mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        </div>
+        <h3 class="font-bold mb-2 text-[#a78bfa]" data-lang="f1-title">Patrimonio proyectado</h3>
+        <p class="text-sm text-[#94a3b8]" data-lang="f1-desc">Dashboard con evolución mensual, inflación nominal o real y Time Travel.</p>
+      </article>
+      <article class="feature-card text-center">
+        <div class="mb-4 inline-block p-4 bg-violet-500/10 rounded-xl">
+          <svg class="h-8 w-8 text-[#a78bfa] mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <h3 class="font-bold mb-2 text-[#a78bfa]" data-lang="f2-title">Mis activos y crew</h3>
+        <p class="text-sm text-[#94a3b8]" data-lang="f2-desc">Cartera por titular. Importa y exporta CSV o Excel.</p>
+      </article>
+      <article class="feature-card text-center">
+        <div class="mb-4 inline-block p-4 bg-violet-500/10 rounded-xl">
+          <svg class="h-8 w-8 text-[#a78bfa] mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3 class="font-bold mb-2 text-[#a78bfa]" data-lang="f3-title">Metas financieras</h3>
+        <p class="text-sm text-[#94a3b8]" data-lang="f3-desc">Objetivos con plazo y seguimiento sin confundir patrimonio total.</p>
+      </article>
+      <article class="feature-card text-center">
+        <div class="mb-4 inline-block p-4 bg-violet-500/10 rounded-xl">
+          <svg class="h-8 w-8 text-[#a78bfa] mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18"/><path d="m8 7 4-4 4 4"/><path d="m8 17 4 4 4-4"/></svg>
+        </div>
+        <h3 class="font-bold mb-2 text-[#a78bfa]" data-lang="f4-title">Escenarios</h3>
+        <p class="text-sm text-[#94a3b8]" data-lang="f4-desc">Bandas optimista, base y pesimista de tu patrimonio futuro.</p>
+      </article>
+      <article class="feature-card text-center">
+        <div class="mb-4 inline-block p-4 bg-violet-500/10 rounded-xl">
+          <svg class="h-8 w-8 text-[#a78bfa] mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
+        </div>
+        <h3 class="font-bold mb-2 text-[#a78bfa]" data-lang="f5-title">Coach de IA (opcional)</h3>
+        <p class="text-sm text-[#94a3b8]" data-lang="f5-desc">Tu clave de Google Gemini. Sin clave, no se envía nada a terceros.</p>
+      </article>
+      <article class="feature-card text-center">
+        <div class="mb-4 inline-block p-4 bg-violet-500/10 rounded-xl">
+          <svg class="h-8 w-8 text-[#a78bfa] mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3 class="font-bold mb-2 text-[#a78bfa]" data-lang="f6-title">Privacidad local</h3>
+        <p class="text-sm text-[#94a3b8]" data-lang="f6-desc">Sin cuenta obligatoria. Datos en el dispositivo; tú controlas exportar y borrar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="text-center lg:text-left">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-lang="showcase-title">Preparando el lanzamiento</h2>
+      <p class="text-[#94a3b8] text-lg" data-lang="showcase-desc">Futurit llegará pronto a la App Store. Claridad patrimonial sin asesoramiento opaco.</p>
+    </div>
+    <div class="parallax-container" id="parallax-scene" aria-hidden="true">
+      <div class="parallax-item mock-card p-4" style="width:260px;top:8%;left:28%;transform:translateZ(30px)">
+        <p class="text-xs text-[#94a3b8] uppercase">Patrimonio proyectado</p>
+        <p class="text-2xl font-black text-[#a78bfa] mt-1">€ 284.500</p>
+        <p class="text-xs text-[#4ade80] mt-1">+12,4 % escenario base</p>
+      </div>
+      <div class="parallax-item mock-card p-4" style="width:200px;top:52%;left:8%;transform:translateZ(70px)">
+        <p class="text-sm font-semibold">Meta: fondo emergencia</p>
+        <div class="w-full bg-white/10 rounded-full h-2 mt-2"><div class="h-2 rounded-full bg-[#8b5cf6]" style="width:72%"></div></div>
+        <p class="text-xs text-[#94a3b8] mt-2">72 % del objetivo</p>
+      </div>
+      <div class="parallax-item mock-card p-3" style="width:170px;top:18%;left:2%;transform:translateZ(90px)">
+        <p class="text-xs text-[#94a3b8]">Activo</p>
+        <p class="font-semibold text-sm">Fondos indexados</p>
+      </div>
+      <div class="parallax-item mock-card p-4" style="width:220px;top:58%;left:62%;transform:translateZ(50px)">
+        <p class="text-xs font-semibold mb-2">Escenarios año 10</p>
+        <p class="text-xs flex justify-between"><span class="text-[#4ade80]">Optimista</span><span>€ 310k</span></p>
+        <p class="text-xs flex justify-between"><span class="text-[#a78bfa]">Base</span><span>€ 265k</span></p>
+        <p class="text-xs flex justify-between"><span class="text-[#fb7185]">Pesimista</span><span>€ 218k</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="border-t border-white/5 py-20 px-4 bg-[#14141f]/30">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-2" data-lang="cta-title">¿Quieres ser de los primeros?</h2>
+    <p class="text-[#94a3b8] mb-8" data-lang="cta-subtitle">Lista de espera para el lanzamiento en la App Store.</p>
+    <form id="waitlist-form" class="max-w-lg mx-auto" method="POST">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+      <input type="hidden" name="product" value="Futurit">
+      <input type="hidden" name="terms_version" value="2026-05">
+      <input type="hidden" name="privacy_accepted" id="privacy-accepted-field" value="no">
+      <input type="hidden" name="marketing_consent" id="marketing-consent-field" value="no">
+      <input type="hidden" name="consent_language" id="consent-language-field" value="es">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input type="email" name="email" id="waitlist-email" required placeholder="tu@email.com" autocomplete="email" class="w-full px-5 py-3 rounded-full bg-[#14141f] border border-white/10 focus:border-[#8b5cf6] focus:outline-none" />
+        <button type="submit" class="btn-brand font-bold py-3 px-8 rounded-full shrink-0" data-lang="cta-button">Unirme</button>
+      </div>
+      <div class="mt-4 flex items-start gap-2 text-sm text-[#94a3b8] text-left max-w-lg mx-auto">
+        <input type="checkbox" id="terms" required class="mt-1 accent-[#8b5cf6] shrink-0" />
+        <label for="terms" class="cursor-pointer"><span data-lang="terms-text">Acepto los Términos y la Privacidad.</span></label>
+      </div>
+      <div class="mt-3 flex items-start gap-2 text-sm text-[#94a3b8] text-left max-w-lg mx-auto">
+        <input type="checkbox" id="marketing" class="mt-1 accent-[#8b5cf6] shrink-0" />
+        <label for="marketing" class="cursor-pointer"><span data-lang="marketing-text">Acepto recibir novedades sobre Futurit.</span></label>
+      </div>
+      <p id="form-status" class="text-sm mt-4 hidden" role="status"></p>
+      <p class="text-xs text-[#94a3b8]/70 mt-4 max-w-lg mx-auto leading-relaxed" data-lang="privacy-policy">No compartiremos tu email con terceros.</p>
+      <p class="text-xs text-[#94a3b8]/60 mt-2 max-w-lg mx-auto leading-relaxed" data-lang="disclaimer-short">Futurit está en desarrollo.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="border-t border-white/5 py-10 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col items-center gap-4 mb-8 text-center">
+      <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-[#94a3b8]" aria-label="Legal">
+        <a href="./terminos.html" class="hover:text-white" data-lang="footer-terms">Términos</a>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <a href="./privacidad.html" class="hover:text-white" data-lang="footer-privacy">Privacidad</a>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <button type="button" class="modal-link hover:text-white" data-type="legal" data-lang="footer-legal">Aviso Legal</button>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <button type="button" class="modal-link hover:text-white" data-type="cookies" data-lang="footer-cookies">Cookies</button>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <a href="mailto:soporte@futurit.app" class="hover:text-white" data-lang="footer-contact">Contacto</a>
+      </nav>
+      <p class="text-xs text-[#94a3b8]/70 max-w-2xl leading-relaxed" data-lang="footer-disclaimer">Futurit es un proyecto en desarrollo.</p>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+      <div class="flex items-center gap-3">
+        <img src="./assets/logo.png" alt="Futurit" class="h-6 w-auto opacity-80">
+        <p class="text-[#94a3b8]">&copy; <span id="year"></span> Futurit. <span data-lang="footer-rights">Todos los derechos reservados.</span></p>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="https://www.instagram.com/getfuturit/" target="_blank" rel="noopener noreferrer" class="text-[#94a3b8] hover:text-white inline-flex items-center gap-1.5" aria-label="Instagram @getfuturit">
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>@getfuturit</span>
+        </a>
+        <select id="language-switcher" class="bg-[#14141f] border border-white/10 rounded-lg px-2 py-1 text-[#94a3b8] font-semibold" aria-label="Idioma">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
+  <div class="bg-[#14141f] border border-white/10 rounded-2xl max-w-2xl w-full p-6 relative max-h-[90vh] flex flex-col">
+    <button id="modal-close" type="button" class="absolute top-4 right-4 text-2xl text-[#94a3b8] hover:text-white" aria-label="Cerrar">&times;</button>
+    <h2 id="modal-title" class="text-xl font-bold mb-4 pr-8"></h2>
+    <div id="modal-content" class="text-sm text-[#94a3b8] overflow-y-auto flex-1 leading-relaxed"></div>
+  </div>
+</div>
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-[#14141f] border-t border-white/10 z-50 hidden">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-sm text-[#94a3b8] text-center sm:text-left" data-lang="cookie-text">Usamos cookies esenciales y servicios de terceros.</p>
+    <div class="flex gap-3 shrink-0">
+      <button type="button" id="cookie-reject" class="px-4 py-2 text-sm font-semibold text-[#94a3b8] border border-white/10 rounded-full hover:bg-white/5" data-lang="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept" class="px-4 py-2 text-sm font-semibold rounded-full btn-brand" data-lang="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+
+<script src="./legal.js"></script>
+<script src="./site.js"></script>
+</body>
+</html>
