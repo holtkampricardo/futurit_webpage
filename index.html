@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futurit – Simulador patrimonial personal</title>
-  <meta name="description" content="Futurit te ayuda a visualizar tu patrimonio, activos, metas y escenarios financieros. Datos en tu dispositivo. Próximamente en iOS y Android.">
-  <meta name="keywords" content="Futurit, patrimonio, simulación financiera, activos, metas, escenarios, app iOS, app Android, planificación patrimonial">
-  <meta name="robots" content="index, follow">
+  <title>Futurit — App de simulación patrimonial | getfuturit.app</title>
+  <meta name="description" content="Futurit es la app para visualizar tu patrimonio, activos, metas y escenarios financieros. Simulador patrimonial personal. Datos en tu dispositivo. Próximamente en iOS y Android.">
+  <meta name="keywords" content="Futurit, getfuturit, futurit app, patrimonio, simulación financiera, simulador patrimonial, activos, metas, escenarios, app iOS, app Android">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Buildit Labs">
+  <meta name="application-name" content="Futurit">
+  <meta name="apple-mobile-web-app-title" content="Futurit">
   <link rel="canonical" href="https://www.getfuturit.app/">
-  <meta property="og:title" content="Futurit – Simulador patrimonial personal">
-  <meta property="og:description" content="Visualiza tu patrimonio, activos, metas y escenarios. Próximamente en iOS y Android.">
+  <link rel="manifest" href="./manifest.json">
+  <meta property="og:site_name" content="Futurit">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Futurit — Simulador patrimonial personal">
+  <meta property="og:description" content="Futurit te ayuda a visualizar tu patrimonio, activos, metas y escenarios. App en desarrollo para iOS y Android.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.getfuturit.app/">
-  <meta property="og:image" content="https://www.getfuturit.app/assets/logo.png">
+  <meta property="og:image" content="https://www.getfuturit.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="Futurit — simulador patrimonial personal">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Futurit – Simulador patrimonial personal">
-  <meta name="twitter:description" content="Visualiza tu patrimonio, activos, metas y escenarios. Próximamente en iOS y Android.">
-  <meta name="twitter:image" content="https://www.getfuturit.app/assets/logo.png">
+  <meta name="twitter:site" content="@getfuturit">
+  <meta name="twitter:title" content="Futurit — Simulador patrimonial personal">
+  <meta name="twitter:description" content="Futurit te ayuda a visualizar tu patrimonio, activos, metas y escenarios. Próximamente en iOS y Android.">
+  <meta name="twitter:image" content="https://www.getfuturit.app/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Futurit — simulador patrimonial personal">
   <meta name="theme-color" content="#09090f">
-  <link rel="icon" type="image/png" href="https://www.getfuturit.app/assets/icon.png">
-  <link rel="apple-touch-icon" href="https://www.getfuturit.app/assets/icon.png">
+  <link rel="icon" type="image/png" href="./assets/icon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -28,24 +39,89 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Futurit",
-    "url": "https://www.getfuturit.app/",
-    "description": "Simulador patrimonial personal: visualiza activos, metas y escenarios. Herramienta educativa; no es asesoramiento financiero regulado.",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "iOS, Android",
-    "image": "https://www.getfuturit.app/assets/logo.png",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Futurit",
-    "url": "https://www.getfuturit.app/",
-    "logo": "https://www.getfuturit.app/assets/logo.png",
-    "sameAs": ["https://www.instagram.com/getfuturit/"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.getfuturit.app/#website",
+        "url": "https://www.getfuturit.app/",
+        "name": "Futurit",
+        "alternateName": ["getfuturit", "Futurit app", "getfuturit.app"],
+        "description": "Futurit — simulador patrimonial personal para visualizar activos, metas y escenarios financieros.",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://www.getfuturit.app/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.getfuturit.app/#organization",
+        "name": "Futurit",
+        "legalName": "Buildit Labs",
+        "url": "https://www.getfuturit.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.getfuturit.app/assets/logo.png",
+          "width": 1600,
+          "height": 704
+        },
+        "sameAs": ["https://www.instagram.com/getfuturit/"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "aplicacionfuturit@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["Spanish", "English"]
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://www.getfuturit.app/#app",
+        "name": "Futurit",
+        "alternateName": "getfuturit",
+        "url": "https://www.getfuturit.app/",
+        "description": "Futurit es un simulador patrimonial personal: visualiza activos, metas y escenarios. Herramienta educativa; no es asesoramiento financiero regulado.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "iOS, Android",
+        "image": "https://www.getfuturit.app/assets/logo.png",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@id": "https://www.getfuturit.app/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.getfuturit.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Futurit es asesoramiento financiero?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Futurit es una herramienta educativa de simulación. No ofrece recomendaciones de inversión reguladas ni sustituye a un asesor profesional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Dónde se guardan mis datos en Futurit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En la app, los datos permanecen en tu dispositivo. Esta web solo recoge tu email si te apuntas a la lista de espera."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuándo estará disponible Futurit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Futurit se está preparando para el lanzamiento en la App Store y Google Play. Apúntate a la lista y te avisaremos cuando esté listo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Tiene coste la app Futurit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Futurit será gratuito en su lanzamiento. El coach de IA opcional usa tu propia clave de Google Gemini."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -55,7 +131,7 @@
 <header id="site-header" class="site-header">
   <div class="header-shell">
     <a href="./" class="site-logo-link" aria-label="Futurit — inicio">
-      <img src="./assets/logo.png" alt="Futurit" class="site-logo" width="200" height="88">
+      <img src="./assets/logo.png" alt="Futurit — simulador patrimonial personal" class="site-logo" width="200" height="88">
     </a>
     <nav class="header-nav" aria-label="Principal">
       <a href="#features" data-lang="nav-features">Funciones</a>
@@ -103,10 +179,10 @@
       <div class="hero-copy">
         <div class="hero-badge reveal">
           <span class="hero-badge-pulse" aria-hidden="true"></span>
-          <span data-lang="hero-badge">Simulación patrimonial</span>
+          <span data-lang="hero-badge">Futurit · Simulación patrimonial</span>
         </div>
 
-        <h1 class="hero-title" id="hero-title" data-lang-words="hero-title">Haz crecer tu visión del patrimonio</h1>
+        <h1 class="hero-title" id="hero-title" data-lang-words="hero-title">Haz crecer tu visión del patrimonio con Futurit</h1>
 
         <p class="hero-subtitle reveal reveal-delay-1">
           <span data-lang="hero-subtitle-prefix">Modela tus</span>
@@ -506,32 +582,74 @@
           <p data-lang="faq-a4">Futurit será gratuito en su lanzamiento. El coach de IA opcional usa tu propia clave de Google Gemini.</p>
         </details>
       </div>
-      <p id="form-status" class="text-sm mt-4 hidden" role="status"></p>
-      <p class="text-xs text-[#94a3b8]/70 mt-4 max-w-lg mx-auto leading-relaxed" data-lang="privacy-policy">No compartiremos tu email con terceros.</p>
-      <p class="text-xs text-[#94a3b8]/60 mt-2 max-w-lg mx-auto leading-relaxed" data-lang="disclaimer-short">Futurit está en desarrollo.</p>
-    </form>
-  </div>
-</section>
+    </div>
+  </section>
 
-<footer class="border-t border-white/5 py-10 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col items-center gap-4 mb-8 text-center">
-      <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-[#94a3b8]" aria-label="Legal">
-        <a href="./terminos.html" class="hover:text-white" data-lang="footer-terms">Términos</a>
-        <span class="text-white/20" aria-hidden="true">·</span>
-        <a href="./privacidad.html" class="hover:text-white" data-lang="footer-privacy">Privacidad</a>
-        <span class="text-white/20" aria-hidden="true">·</span>
-        <button type="button" class="modal-link hover:text-white" data-type="legal" data-lang="footer-legal">Aviso Legal</button>
-        <span class="text-white/20" aria-hidden="true">·</span>
-        <button type="button" class="modal-link hover:text-white" data-type="cookies" data-lang="footer-cookies">Cookies</button>
-        <span class="text-white/20" aria-hidden="true">·</span>
-        <a href="mailto:aplicacionfuturit@gmail.com" class="hover:text-white" data-lang="footer-contact">Contacto</a>
+  <section id="cta" class="cta-section">
+    <div class="container">
+      <div class="cta-card border-beam-wrap reveal">
+        <div class="cta-layout">
+          <div class="cta-benefits">
+            <h2 data-lang="cta-title">¿Quieres ser de los primeros?</h2>
+            <p data-lang="cta-subtitle">Lista de espera para el lanzamiento en iOS y Android.</p>
+            <ul class="cta-perks">
+              <li data-lang="cta-perk-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Acceso anticipado al aviso de lanzamiento</li>
+              <li data-lang="cta-perk-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Sin spam: solo novedades de Futurit</li>
+              <li data-lang="cta-perk-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Puedes darte de baja cuando quieras</li>
+            </ul>
+          </div>
+
+          <form id="waitlist-form" class="waitlist-form" method="POST">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+            <input type="hidden" name="product" value="Futurit">
+            <input type="hidden" name="terms_version" value="2026-05">
+            <input type="hidden" name="privacy_accepted" id="privacy-accepted-field" value="no">
+            <input type="hidden" name="marketing_consent" id="marketing-consent-field" value="no">
+            <input type="hidden" name="consent_language" id="consent-language-field" value="es">
+
+            <div class="waitlist-row">
+              <input type="email" name="email" id="waitlist-email" required placeholder="tu@email.com" autocomplete="email" class="waitlist-input" data-lang-placeholder="cta-placeholder" />
+              <button type="submit" class="btn-primary btn-shimmer" style="white-space:nowrap" data-lang="cta-button">Unirme</button>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="terms" required />
+              <label for="terms"><span data-lang="terms-text">Acepto los Términos y la Privacidad.</span></label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="marketing" />
+              <label for="marketing"><span data-lang="marketing-text">Acepto recibir novedades sobre Futurit.</span></label>
+            </div>
+
+            <p id="form-status" class="form-footnote hidden" role="status"></p>
+            <p class="form-footnote" data-lang="privacy-policy">No compartiremos tu email con terceros.</p>
+            <p class="form-footnote" data-lang="disclaimer-short">Futurit está en desarrollo.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <nav class="footer-nav" aria-label="Legal">
+        <a href="./terminos.html" data-lang="footer-terms">Términos</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="./privacidad.html" data-lang="footer-privacy">Privacidad</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" class="modal-link" data-type="legal" data-lang="footer-legal">Aviso Legal</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" class="modal-link" data-type="cookies" data-lang="footer-cookies">Cookies</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="mailto:aplicacionfuturit@gmail.com" data-lang="footer-contact">Contacto</a>
       </nav>
       <p class="form-footnote" style="max-width:36rem;text-align:center" data-lang="footer-disclaimer">Futurit es un proyecto en desarrollo.</p>
     </div>
     <div class="footer-bottom">
       <div class="footer-brand">
-        <img src="./assets/logo.png" alt="Futurit" loading="lazy" width="200" height="88">
+        <img src="./assets/logo.png" alt="Futurit" class="footer-logo" loading="lazy" width="1600" height="704" title="Futurit">
         <span>&copy; <span id="year"></span> Futurit. <span data-lang="footer-rights">Todos los derechos reservados.</span></span>
       </div>
       <div class="footer-social">

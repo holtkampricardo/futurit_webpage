@@ -2043,7 +2043,11 @@ body::before {
 }
 
 .footer-brand img {
+  display: block;
   height: 1.35rem;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
   opacity: 0.75;
 }
 
@@ -2330,6 +2334,108 @@ button.modal-link {
   to { transform: rotate(360deg); }
 }
 
+/* ── Legal subpages ── */
+
+.legal-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--border);
+  background: rgba(7, 7, 11, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.legal-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+}
+
+.legal-back {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.legal-back:hover {
+  color: var(--ink);
+}
+
+.legal-page {
+  padding: 2.5rem 1rem 3rem;
+}
+
+.legal-wrap {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.legal-wrap h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.legal-wrap h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.65rem;
+  color: var(--accent-soft);
+}
+
+.legal-wrap p,
+.legal-wrap li {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.legal-wrap ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.legal-wrap a {
+  color: var(--accent-soft);
+}
+
+.legal-wrap a:hover {
+  color: var(--ink);
+}
+
+.legal-meta {
+  font-size: 0.82rem;
+  color: rgba(139, 139, 154, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.legal-callout {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  background: rgba(251, 191, 36, 0.08);
+  margin: 1.5rem 0;
+}
+
+.legal-callout p {
+  margin: 0;
+  color: #fde68a;
+  font-size: 0.9rem;
+}
+
+.legal-footnote {
+  margin-top: 3rem;
+  font-size: 0.82rem;
+  color: rgba(139, 139, 154, 0.85);
+}
+
 /* Below-fold sections: skip layout/paint until near viewport */
 .marquee-section,
 .principles-section,
@@ -2351,7 +2457,8 @@ button.modal-link {
   }
 
   .header-shell,
-  .mobile-nav {
+  .mobile-nav,
+  .legal-header {
     backdrop-filter: none;
     background: rgba(7, 7, 11, 0.94);
   }

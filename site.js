@@ -3,8 +3,8 @@
  */
 const FUTURIT_SITE = {
   formspreeEndpoint: 'https://formspree.io/f/mnjrjjdj',
-  contactEmail: 'legal@futurit.app',
-  supportEmail: 'soporte@futurit.app',
+  contactEmail: 'aplicacionfuturit@gmail.com',
+  supportEmail: 'aplicacionfuturit@gmail.com',
 };
 
 const COOKIE_CONSENT_KEY = 'futurit-cookie-consent';
@@ -17,9 +17,9 @@ const translations = {
     'nav-compare': 'Por qué',
     'nav-faq': 'FAQ',
     'notify-me': 'Avísame',
-    'hero-badge': 'Simulación patrimonial',
-    'hero-title': 'Haz crecer tu visión del patrimonio',
-    'hero-title-accent': ['patrimonio'],
+    'hero-badge': 'Futurit · Simulación patrimonial',
+    'hero-title': 'Haz crecer tu visión del patrimonio con Futurit',
+    'hero-title-accent': ['patrimonio', 'Futurit'],
     'hero-subtitle-prefix': 'Modela tus',
     'hero-subtitle-suffix': ' con claridad. Tus datos, en tu dispositivo.',
     'hero-rotate-words': ['activos', 'metas', 'escenarios'],
@@ -146,7 +146,7 @@ const translations = {
     'cookie-reject': 'Rechazar no esenciales',
     'cookie-accept': 'Aceptar',
     'form-success': '¡Gracias! Te avisaremos cuando Futurit esté disponible.',
-    'form-error': 'No se pudo enviar. Escríbenos a soporte@futurit.app',
+    'form-error': 'No se pudo enviar. Escríbenos a aplicacionfuturit@gmail.com',
     'form-config': 'Configura Formspree en site.js (formspreeEndpoint).',
   },
   en: {
@@ -154,9 +154,9 @@ const translations = {
     'nav-features': 'Features',
     'nav-showcase': 'Preview',
     'notify-me': 'Notify me',
-    'hero-badge': 'Wealth simulation',
-    'hero-title': 'Grow your view of your wealth',
-    'hero-title-accent': ['wealth'],
+    'hero-badge': 'Futurit · Wealth simulation',
+    'hero-title': 'Grow your view of your wealth with Futurit',
+    'hero-title-accent': ['wealth', 'Futurit'],
     'hero-subtitle-prefix': 'Model your',
     'hero-subtitle-suffix': ' with clarity. Your data stays on your device.',
     'hero-rotate-words': ['assets', 'goals', 'scenarios'],
@@ -279,7 +279,7 @@ const translations = {
     'cookie-reject': 'Reject non-essential',
     'cookie-accept': 'Accept',
     'form-success': 'Thanks! We will notify you when Futurit is available.',
-    'form-error': 'Could not submit. Email us at soporte@futurit.app',
+    'form-error': 'Could not submit. Email us at aplicacionfuturit@gmail.com',
     'form-config': 'Configure Formspree in site.js (formspreeEndpoint).',
   },
 };
