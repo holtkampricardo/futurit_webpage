@@ -148,11 +148,31 @@ const translations = {
     'form-success': '¡Gracias! Te avisaremos cuando Futurit esté disponible.',
     'form-error': 'No se pudo enviar. Escríbenos a aplicacionfuturit@gmail.com',
     'form-config': 'Configura Formspree en site.js (formspreeEndpoint).',
+    'ui-balance-delta': '+12,4% · escenario base',
+    'tag-opt': 'Optimista',
+    'tag-base': 'Base',
+    'tag-pes': 'Pesimista',
+    'tag-opt-amount': 'Optimista €310k',
+    'tag-base-amount': 'Base €265k',
+    'tag-pes-amount': 'Pesimista €218k',
+    'asset-1': 'Fondos indexados',
+    'asset-2': 'Cuenta ahorro',
+    'asset-3': 'Cripto',
+    'goal-1': 'Casa 2032',
+    'excel-head-asset': 'Activo',
+    'excel-head-value': 'Valor',
+    'excel-head-pct': '%',
+    'excel-row-1': 'Fondo A',
+    'excel-row-2': 'Cuenta',
+    'excel-row-3': 'Cripto',
+    'excel-warn': '⚠ Fórmulas desactualizadas · Sin escenarios',
   },
   en: {
     'nav-privacy': 'Privacy',
     'nav-features': 'Features',
     'nav-showcase': 'Preview',
+    'nav-compare': 'Why',
+    'nav-faq': 'FAQ',
     'notify-me': 'Notify me',
     'hero-badge': 'Futurit · Wealth simulation',
     'hero-title': 'Grow your view of your wealth with Futurit',
@@ -187,6 +207,9 @@ const translations = {
     'stat-2-suffix': ' scenarios',
     'stat-3': 'App Store and Google Play launch coming. Waitlist is open.',
     'stat-3-value': 'iOS + Android',
+    'principle-1': 'Local-first',
+    'principle-2': 'No subscription',
+    'principle-3': 'Educational tool',
     'principle-4': 'iOS & Android',
     'section-features': 'Features',
     'section-process': 'How it works',
@@ -281,27 +304,29 @@ const translations = {
     'form-success': 'Thanks! We will notify you when Futurit is available.',
     'form-error': 'Could not submit. Email us at aplicacionfuturit@gmail.com',
     'form-config': 'Configure Formspree in site.js (formspreeEndpoint).',
+    'ui-balance-delta': '+12.4% · base scenario',
+    'tag-opt': 'Optimistic',
+    'tag-base': 'Base',
+    'tag-pes': 'Pessimistic',
+    'tag-opt-amount': 'Optimistic €310k',
+    'tag-base-amount': 'Base €265k',
+    'tag-pes-amount': 'Pessimistic €218k',
+    'asset-1': 'Index funds',
+    'asset-2': 'Savings account',
+    'asset-3': 'Crypto',
+    'goal-1': 'Home 2032',
+    'excel-head-asset': 'Asset',
+    'excel-head-value': 'Value',
+    'excel-head-pct': '%',
+    'excel-row-1': 'Fund A',
+    'excel-row-2': 'Account',
+    'excel-row-3': 'Crypto',
+    'excel-warn': '⚠ Outdated formulas · No scenarios',
   },
 };
 
 let currentLang = localStorage.getItem('futurit-lang') || 'es';
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const coarsePointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-const litePerf = prefersReducedMotion || coarsePointer;
-
-function throttleRAF(fn) {
-  let ticking = false;
-  let lastArgs = null;
-  return (...args) => {
-    lastArgs = args;
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      fn(...lastArgs);
-      ticking = false;
-    });
-  };
-}
 
 function renderHeroTitle(lang) {
   const el = document.getElementById('hero-title');
@@ -339,6 +364,10 @@ function setLanguage(lang) {
 
   renderHeroTitle(lang);
   initRotatingText(lang);
+  requestAnimationFrame(() => {
+    syncRotatingWrapWidth();
+    document.fonts?.ready?.then(() => syncRotatingWrapWidth());
+  });
 
   const sw = document.getElementById('language-switcher');
   if (sw) sw.value = lang;
@@ -347,15 +376,40 @@ function setLanguage(lang) {
   bindModalLinks();
 }
 
+let legalLoadPromise = null;
+
+function loadLegalTexts() {
+  if (typeof LEGAL_TEXTS !== 'undefined') return Promise.resolve();
+  if (legalLoadPromise) return legalLoadPromise;
+
+  legalLoadPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = './legal.js';
+    script.async = true;
+    script.onload = () => resolve();
+    script.onerror = () => {
+      legalLoadPromise = null;
+      reject(new Error('legal.js failed to load'));
+    };
+    document.head.appendChild(script);
+  });
+
+  return legalLoadPromise;
+}
+
 function openLegalModal(type) {
-  const doc = typeof LEGAL_TEXTS !== 'undefined' ? LEGAL_TEXTS[currentLang]?.[type] : null;
-  if (!doc) return;
-  const modal = document.getElementById('modal');
-  document.getElementById('modal-title').textContent = doc.title;
-  document.getElementById('modal-content').innerHTML = doc.content;
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
-  bindModalLinks();
+  loadLegalTexts()
+    .then(() => {
+      const doc = typeof LEGAL_TEXTS !== 'undefined' ? LEGAL_TEXTS[currentLang]?.[type] : null;
+      if (!doc) return;
+      const modal = document.getElementById('modal');
+      document.getElementById('modal-title').textContent = doc.title;
+      document.getElementById('modal-content').innerHTML = doc.content;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      bindModalLinks();
+    })
+    .catch(() => {});
 }
 
 function bindModalLinks() {
@@ -399,6 +453,7 @@ function initRotatingText(lang = currentLang) {
   if (index < 0) index = 0;
   el.textContent = words[index];
   el.classList.remove('is-exit', 'is-enter');
+  syncRotatingWrapWidth();
 
   if (prefersReducedMotion || words.length < 2) return;
 
@@ -411,10 +466,18 @@ function initRotatingText(lang = currentLang) {
       el.classList.add('is-enter');
       requestAnimationFrame(() => {
         el.classList.remove('is-enter');
+        syncRotatingWrapWidth();
       });
       index = next;
     }, 280);
   }, 2800);
+}
+
+function syncRotatingWrapWidth() {
+  const wrap = document.querySelector('.rotating-wrap');
+  const el = document.getElementById('rotating-word');
+  if (!wrap || !el) return;
+  wrap.style.width = `${el.offsetWidth}px`;
 }
 
 function initCompareSlider() {
@@ -489,39 +552,6 @@ function initCompareSlider() {
   range?.addEventListener('input', (e) => paint(e.target.value));
 
   paint(range?.value ?? 50);
-}
-
-function initHeroSpotlight() {
-  const hero = document.querySelector('.hero');
-  const spotlight = document.getElementById('hero-spotlight');
-  if (!hero || !spotlight || litePerf) return;
-
-  const onMove = throttleRAF((e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    spotlight.style.setProperty('--spot-x', `${x}%`);
-    spotlight.style.setProperty('--spot-y', `${y}%`);
-  });
-
-  hero.addEventListener('mousemove', onMove, { passive: true });
-}
-
-function initSpotlightCards() {
-  if (litePerf) return;
-
-  const onMove = throttleRAF((e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    card.style.setProperty('--card-x', `${x}%`);
-    card.style.setProperty('--card-y', `${y}%`);
-  });
-
-  document.querySelectorAll('.spotlight-card').forEach((card) => {
-    card.addEventListener('mousemove', onMove, { passive: true });
-  });
 }
 
 function initScrollReveal() {
@@ -684,24 +714,6 @@ function initMobileNav() {
   });
 }
 
-function initPhoneTilt() {
-  const phone = document.getElementById('phone-frame');
-  const device = document.querySelector('.hero-device');
-  if (!phone || !device || litePerf) return;
-
-  const onMove = throttleRAF((e) => {
-    const rect = device.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    phone.style.transform = `perspective(1200px) rotateY(${-8 + x * 10}deg) rotateX(${4 - y * 8}deg) translateY(-4px)`;
-  });
-
-  device.addEventListener('mousemove', onMove, { passive: true });
-  device.addEventListener('mouseleave', () => {
-    phone.style.transform = 'perspective(1200px) rotateY(-8deg) rotateX(4deg)';
-  });
-}
-
 function initCookieBanner() {
   const banner = document.getElementById('cookie-banner');
   const accept = document.getElementById('cookie-accept');
@@ -800,14 +812,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setLanguage(currentLang);
   initScrollReveal();
-  initHeroSpotlight();
-  initSpotlightCards();
   initCounters();
   initScrollEffects();
   initMarqueePause();
   initCompareSlider();
   initMobileNav();
-  initPhoneTilt();
   initCookieBanner();
   initWaitlistForm();
 });

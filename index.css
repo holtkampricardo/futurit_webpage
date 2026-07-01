@@ -23,7 +23,7 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --font-display: 'Syne', system-ui, sans-serif;
   --font-body: 'Manrope', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
 }
 
 *,
@@ -65,16 +65,7 @@ body {
   border: 0;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0.03;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 0.45px, transparent 0.45px);
-  background-size: 3px 3px;
-}
+/* Grain overlay removed — fixed full-screen layer was costly for little visual gain */
 
 ::selection {
   background: rgba(124, 106, 239, 0.35);
@@ -152,8 +143,7 @@ body::before {
   padding: 0.65rem 0.85rem 0.65rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(7, 7, 11, 0.72);
-  backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(7, 7, 11, 0.94);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
 }
 
@@ -217,8 +207,7 @@ body::before {
   padding: 0.65rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: rgba(7, 7, 11, 0.96);
-  backdrop-filter: blur(16px);
+  background: rgba(7, 7, 11, 0.98);
   flex-direction: column;
   gap: 0.25rem;
 }
@@ -278,22 +267,10 @@ body::before {
 .btn-shimmer {
   overflow: hidden;
   background: linear-gradient(135deg, #f4f4f5 0%, #e4e4e7 50%, #f4f4f5 100%);
-  background-size: 200% 100%;
-  animation: shimmer-bg 4s ease-in-out infinite;
 }
 
 .btn-shimmer::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 38%,
-    rgba(255, 255, 255, 0.55) 50%,
-    transparent 62%
-  );
-  transform: translateX(-120%);
-  animation: shimmer-sweep 3.5s ease-in-out infinite;
+  display: none;
 }
 
 .btn-ghost {
@@ -344,9 +321,8 @@ body::before {
   content: '';
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.55;
-  animation: aurora-drift 18s ease-in-out infinite alternate;
+  filter: blur(64px);
+  opacity: 0.5;
 }
 
 .hero-aurora::before {
@@ -363,26 +339,14 @@ body::before {
   right: -8%;
   bottom: 5%;
   background: radial-gradient(circle, rgba(52, 211, 153, 0.18), transparent 70%);
-  animation-delay: -6s;
 }
 
 .hero-spotlight {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    600px circle at var(--spot-x, 50%) var(--spot-y, 30%),
-    rgba(124, 106, 239, 0.12),
-    transparent 42%
-  );
-  transition: background 0.15s ease-out;
+  display: none;
 }
 
 .hero-beams {
-  position: absolute;
-  inset: 0;
-  opacity: 0.55;
-  pointer-events: none;
+  display: none;
 }
 
 .hero-beams svg {
@@ -495,11 +459,10 @@ body::before {
 .rotating-wrap {
   display: inline-block;
   position: relative;
-  min-width: 6.5rem;
   height: 1.35em;
   vertical-align: bottom;
   overflow: hidden;
-  margin-inline: 0.15rem;
+  margin-inline: 0.05rem 0;
 }
 
 .rotating-word {
@@ -585,18 +548,12 @@ body::before {
   height: 320px;
   border-radius: 50%;
   background: radial-gradient(circle, var(--accent-glow), transparent 68%);
-  filter: blur(40px);
-  animation: glow-breathe 5s ease-in-out infinite;
+  filter: blur(32px);
+  opacity: 0.85;
 }
 
 .phone-orbit {
-  position: absolute;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  border: 1px dashed rgba(124, 106, 239, 0.18);
-  animation: orbit-spin 24s linear infinite;
-  pointer-events: none;
+  display: none;
 }
 
 .phone-orbit::before {
@@ -759,11 +716,9 @@ body::before {
   padding: 0.7rem 0.85rem;
   border-radius: 0.85rem;
   border: 1px solid var(--border-strong);
-  background: rgba(14, 14, 20, 0.88);
-  backdrop-filter: blur(14px);
+  background: rgba(14, 14, 20, 0.96);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   font-size: 0.72rem;
-  animation: float-y 5s ease-in-out infinite;
 }
 
 .floating-card--a {
@@ -1127,16 +1082,14 @@ body::before {
   overflow: hidden;
 }
 
-.marquee-row--reverse .marquee-track {
-  animation-direction: reverse;
-  animation-duration: 38s;
+.marquee-row--reverse {
+  display: none;
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 32s linear infinite;
-  will-change: transform;
+  animation: marquee 40s linear infinite;
 }
 
 .marquee-section.is-paused .marquee-track {
@@ -1669,9 +1622,8 @@ body::before {
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  opacity: 0.65;
+  opacity: 0.45;
   pointer-events: none;
-  animation: beam-spin 4s linear infinite;
 }
 
 .showcase-layout {
