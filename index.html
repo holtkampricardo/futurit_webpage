@@ -33,8 +33,8 @@
   <link rel="apple-touch-icon" href="./assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap"></noscript>
   <link rel="stylesheet" href="./index.css">
   <script type="application/ld+json">
   {
@@ -131,7 +131,7 @@
 <header id="site-header" class="site-header">
   <div class="header-shell">
     <a href="./" class="site-logo-link" aria-label="Futurit — inicio">
-      <img src="./assets/logo.png" alt="Futurit — simulador patrimonial personal" class="site-logo" width="200" height="88">
+      <img src="./assets/logo.png" alt="Futurit — simulador patrimonial personal" class="site-logo" width="200" height="88" fetchpriority="high" decoding="async">
     </a>
     <nav class="header-nav" aria-label="Principal">
       <a href="#features" data-lang="nav-features">Funciones</a>
@@ -230,7 +230,7 @@
               <div class="ui-balance">
                 <div class="ui-balance-label" data-lang="ui-wealth">Patrimonio proyectado</div>
                 <div class="ui-balance-value">€<span id="balance-counter" data-count="284500">0</span></div>
-                <div class="ui-balance-delta">+12,4% · escenario base</div>
+                <div class="ui-balance-delta" data-lang="ui-balance-delta">+12,4% · escenario base</div>
               </div>
               <div class="ui-chart-line">
                 <svg viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true">
@@ -389,9 +389,9 @@
           <h3 data-lang="f4-title">Escenarios</h3>
           <p data-lang="f4-desc">Bandas optimista, base y pesimista de tu patrimonio futuro.</p>
           <div class="bento-mini-ui mini-scenarios" aria-hidden="true">
-            <div class="mini-scenario"><span class="tag tag-opt">Optimista</span><span>€310k</span></div>
-            <div class="mini-scenario"><span class="tag tag-base">Base</span><span>€265k</span></div>
-            <div class="mini-scenario"><span class="tag tag-pes">Pesimista</span><span>€218k</span></div>
+            <div class="mini-scenario"><span class="tag tag-opt" data-lang="tag-opt">Optimista</span><span>€310k</span></div>
+            <div class="mini-scenario"><span class="tag tag-base" data-lang="tag-base">Base</span><span>€265k</span></div>
+            <div class="mini-scenario"><span class="tag tag-pes" data-lang="tag-pes">Pesimista</span><span>€218k</span></div>
           </div>
         </article>
 
@@ -402,9 +402,9 @@
           <h3 data-lang="f2-title">Mis activos y crew</h3>
           <p data-lang="f2-desc">Cartera por titular. Importa y exporta CSV o Excel.</p>
           <div class="bento-mini-ui mini-assets" aria-hidden="true">
-            <div class="asset-row"><span>Fondos indexados</span><span>€84k</span></div>
-            <div class="asset-row"><span>Cuenta ahorro</span><span>€22k</span></div>
-            <div class="asset-row"><span>Cripto</span><span>€8k</span></div>
+            <div class="asset-row"><span data-lang="asset-1">Fondos indexados</span><span>€84k</span></div>
+            <div class="asset-row"><span data-lang="asset-2">Cuenta ahorro</span><span>€22k</span></div>
+            <div class="asset-row"><span data-lang="asset-3">Cripto</span><span>€8k</span></div>
           </div>
         </article>
 
@@ -415,7 +415,7 @@
           <h3 data-lang="f3-title">Metas financieras</h3>
           <p data-lang="f3-desc">Objetivos con plazo y seguimiento sin confundir patrimonio total.</p>
           <div class="bento-mini-ui" aria-hidden="true">
-            <div class="mini-goal-row"><span>Casa 2032</span><span>41%</span></div>
+            <div class="mini-goal-row"><span data-lang="goal-1">Casa 2032</span><span>41%</span></div>
             <div class="ui-progress" style="margin-top:0.35rem"><span style="width:41%"></span></div>
           </div>
         </article>
@@ -464,11 +464,11 @@
           <div class="excel-mock">
             <div class="excel-toolbar"><span></span><span></span><span></span></div>
             <div class="excel-grid">
-              <div class="excel-cell head">Activo</div><div class="excel-cell head">Valor</div><div class="excel-cell head">%</div>
-              <div class="excel-cell">Fondo A</div><div class="excel-cell num">84.200</div><div class="excel-cell num">68%</div>
-              <div class="excel-cell">Cuenta</div><div class="excel-cell num">22.000</div><div class="excel-cell num">19%</div>
-              <div class="excel-cell">Cripto</div><div class="excel-cell num">8.400</div><div class="excel-cell num err">105%</div>
-              <div class="excel-cell warn" style="grid-column:span 3">⚠ Fórmulas desactualizadas · Sin escenarios</div>
+              <div class="excel-cell head" data-lang="excel-head-asset">Activo</div><div class="excel-cell head" data-lang="excel-head-value">Valor</div><div class="excel-cell head" data-lang="excel-head-pct">%</div>
+              <div class="excel-cell" data-lang="excel-row-1">Fondo A</div><div class="excel-cell num">84.200</div><div class="excel-cell num">68%</div>
+              <div class="excel-cell" data-lang="excel-row-2">Cuenta</div><div class="excel-cell num">22.000</div><div class="excel-cell num">19%</div>
+              <div class="excel-cell" data-lang="excel-row-3">Cripto</div><div class="excel-cell num">8.400</div><div class="excel-cell num err">105%</div>
+              <div class="excel-cell warn" style="grid-column:span 3" data-lang="excel-warn">⚠ Fórmulas desactualizadas · Sin escenarios</div>
             </div>
           </div>
         </div>
@@ -484,9 +484,9 @@
               <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10" fill="none" stroke="url(#cmp-grad)" stroke-width="2.5"/><defs><linearGradient id="cmp-grad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7c6aef"/><stop offset="1" stop-color="#34d399"/></linearGradient></defs></svg>
             </div>
             <div class="compare-app-scenarios">
-              <span class="tag tag-opt">Optimista €310k</span>
-              <span class="tag tag-base">Base €265k</span>
-              <span class="tag tag-pes">Pesimista €218k</span>
+              <span class="tag tag-opt" data-lang="tag-opt-amount">Optimista €310k</span>
+              <span class="tag tag-base" data-lang="tag-base-amount">Base €265k</span>
+              <span class="tag tag-pes" data-lang="tag-pes-amount">Pesimista €218k</span>
             </div>
           </div>
         </div>
@@ -533,17 +533,17 @@
             </div>
             <div class="scenario-viz" aria-hidden="true">
               <div class="scenario-row">
-                <span class="tag-opt">Optimista</span>
+                <span class="tag-opt" data-lang="tag-opt">Optimista</span>
                 <div class="scenario-bar"><span class="bar-opt-fill"></span></div>
                 <span>€310k</span>
               </div>
               <div class="scenario-row">
-                <span class="tag-base">Base</span>
+                <span class="tag-base" data-lang="tag-base">Base</span>
                 <div class="scenario-bar"><span class="bar-base-fill"></span></div>
                 <span>€265k</span>
               </div>
               <div class="scenario-row">
-                <span class="tag-pes">Pesimista</span>
+                <span class="tag-pes" data-lang="tag-pes">Pesimista</span>
                 <div class="scenario-bar"><span class="bar-pes-fill"></span></div>
                 <span>€218k</span>
               </div>
@@ -684,7 +684,6 @@
   </div>
 </div>
 
-<script src="./legal.js" defer></script>
 <script src="./site.js" defer></script>
 </body>
 </html>
