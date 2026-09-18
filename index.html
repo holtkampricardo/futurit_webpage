@@ -28,14 +28,14 @@
   <meta name="twitter:description" content="Futurit te ayuda a visualizar tu patrimonio, activos, metas y escenarios. Próximamente en iOS y Android.">
   <meta name="twitter:image" content="https://www.getfuturit.app/assets/og-image.png">
   <meta name="twitter:image:alt" content="Futurit — simulador patrimonial personal">
-  <meta name="theme-color" content="#09090f">
+  <meta name="theme-color" content="#041a16">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/icon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon-192.png">
   <link rel="apple-touch-icon" sizes="192x192" href="./assets/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Syne:wght@700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="./index.css">
   <script type="application/ld+json">
   {
@@ -117,7 +117,7 @@
             "name": "¿Tiene coste la app Futurit?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Futurit será gratuito en su lanzamiento. El coach de IA opcional usa tu propia clave de Google Gemini."
+              "text": "El simulador core será gratuito. Futurit Plus puede llegar más adelante vía compra in-app; hoy no hay cobro. El coach opcional usa la infraestructura de Futurit (cuotas); al usarlo se envía un resumen de tu simulación a Google Gemini."
             }
           }
         ]
@@ -129,8 +129,8 @@
 <body>
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-<header id="site-header" class="site-header">
-  <div class="header-shell">
+<header id="site-header" class="site-header site-header--slim">
+  <div class="header-shell header-shell--slim">
     <a href="./" class="site-logo-link" aria-label="Futurit — inicio">
       <img src="./assets/logo.png" alt="Futurit — simulador patrimonial personal" class="site-logo" width="200" height="88" fetchpriority="high" decoding="async">
     </a>
@@ -141,7 +141,7 @@
       <a href="./privacidad.html" data-lang="nav-privacy">Privacidad</a>
     </nav>
     <div class="header-actions">
-      <a href="#cta" class="btn-primary btn-sm" data-lang="notify-me">Avísame</a>
+      <a href="#cta" class="btn-primary btn-glow btn-sm" data-lang="notify-me">Avísame</a>
       <button type="button" id="mobile-nav-toggle" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menú">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -157,112 +157,81 @@
 </header>
 
 <main>
-  <section class="hero" id="top">
-    <div class="hero-aurora" aria-hidden="true"></div>
-    <div class="hero-gridlines" aria-hidden="true"></div>
-    <div class="hero-beams" aria-hidden="true">
-      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none">
-        <path class="beam beam-1" d="M-80 120 C280 80, 520 200, 900 60 S1300 180, 1280 40" stroke="url(#beam-grad)" stroke-width="1.2"/>
-        <path class="beam beam-2" d="M-60 420 C320 380, 580 520, 940 400 S1260 500, 1300 360" stroke="url(#beam-grad)" stroke-width="1"/>
-        <path class="beam beam-3" d="M100 680 C400 620, 700 740, 1100 660" stroke="url(#beam-grad)" stroke-width="0.8"/>
-        <defs>
-          <linearGradient id="beam-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="rgba(124,106,239,0)"/>
-            <stop offset="40%" stop-color="rgba(124,106,239,0.35)"/>
-            <stop offset="100%" stop-color="rgba(52,211,153,0)"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-    <div class="hero-spotlight" id="hero-spotlight" aria-hidden="true"></div>
+  <section class="hero hero--premium" id="top">
+    <div class="hero-wash" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
 
-    <div class="container hero-layout">
+    <div class="container hero-split">
       <div class="hero-copy">
-        <div class="hero-badge reveal">
-          <span class="hero-badge-pulse" aria-hidden="true"></span>
-          <span data-lang="hero-badge">Futurit · Simulación patrimonial</span>
+        <div class="hero-eyebrow reveal">
+          <span class="hero-eyebrow-new" data-lang="hero-new">Nuevo</span>
+          <span data-lang="hero-eyebrow">Simulación patrimonial clara</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
 
-        <h1 class="hero-title" id="hero-title" data-lang-words="hero-title">Haz crecer tu visión del patrimonio con Futurit</h1>
+        <p class="hero-brand-mark reveal" aria-label="Futurit">
+          <img src="./assets/logo.png" alt="Futurit" class="hero-brand-logo" width="280" height="123" fetchpriority="high" decoding="async">
+        </p>
 
-        <p class="hero-subtitle reveal reveal-delay-1">
-          <span data-lang="hero-subtitle-prefix">Modela tus</span>
-          <span class="rotating-wrap" aria-live="polite"><span id="rotating-word" class="rotating-word">activos</span></span><span data-lang="hero-subtitle-suffix"> con claridad. Tus datos, en tu dispositivo.</span>
+        <h1 class="hero-title" id="hero-title" data-lang-words="hero-title">Construye una visión más clara de tu patrimonio</h1>
+
+        <p class="hero-subtitle reveal reveal-delay-1" data-lang="hero-subtitle">
+          Activos, metas y escenarios en tu bolsillo. Datos en tu dispositivo.
         </p>
 
         <div class="hero-actions reveal reveal-delay-2">
-          <a href="#cta" class="btn-primary btn-shimmer" data-lang="notify-me-cta">Avísame cuando esté disponible</a>
-          <a href="#features" class="btn-ghost" data-lang="hero-explore">Explorar funciones</a>
+          <a href="#cta" class="btn-primary btn-glow btn-shimmer" data-lang="notify-me-cta">Avísame cuando esté disponible</a>
+          <a href="#features" class="btn-ghost btn-glass" data-lang="hero-explore">Explorar funciones</a>
         </div>
 
-        <div class="hero-meta reveal reveal-delay-3">
-          <span class="meta-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-            <span data-lang="hero-coming">Próximamente en iOS y Android</span>
-          </span>
-          <span class="meta-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span data-lang="hero-local">Datos en el dispositivo</span>
-          </span>
-        </div>
-
-        <p class="disclaimer-box reveal reveal-delay-3" data-lang="hero-disclaimer">Futurit es una herramienta educativa de simulación. No ofrece asesoramiento financiero ni de inversión regulado.</p>
+        <ul class="hero-trust reveal reveal-delay-3" aria-label="Principios">
+          <li data-lang="principle-1">Local-first</li>
+          <li data-lang="principle-2">Core gratis</li>
+          <li data-lang="principle-3">Herramienta educativa</li>
+        </ul>
       </div>
 
-      <div class="hero-device reveal reveal-delay-2" aria-hidden="true">
-        <div class="phone-orbit"></div>
-        <div class="device-glow"></div>
-        <div class="floating-card floating-card--a">
-          <span data-lang="float-scenario">Escenario base</span>
-          <strong>+12,4%</strong>
+      <div class="hero-stage reveal reveal-delay-1" id="hero-stage" aria-hidden="true">
+        <div class="orb-glow"></div>
+        <div class="orb-core" id="orb-spin">
+          <picture>
+            <source srcset="./assets/hero-orb.webp?v=3" type="image/webp">
+            <img
+              src="./assets/hero-orb.png?v=3"
+              alt=""
+              class="orb-img"
+              width="1021"
+              height="1140"
+              decoding="async"
+              fetchpriority="high"
+            >
+          </picture>
         </div>
-        <div class="floating-card floating-card--b">
-          <span data-lang="float-goal">Meta activa</span>
+
+        <div class="orbit-pins">
+          <span class="orbit-pin orbit-pin--a" title="Escenarios">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </span>
+          <span class="orbit-pin orbit-pin--b" title="Metas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <span class="orbit-pin orbit-pin--c" title="Privacidad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+        </div>
+
+        <div class="float-chip float-chip--balance">
+          <span class="float-chip-label" data-lang="ui-wealth">Patrimonio proyectado</span>
+          <strong class="float-chip-value">€<span id="balance-counter" data-count="284500">0</span></strong>
+          <span class="float-chip-delta">+12,4%</span>
+        </div>
+        <div class="float-chip float-chip--goal">
+          <span class="float-chip-label" data-lang="float-goal">Meta activa</span>
           <strong>72%</strong>
-        </div>
-        <div class="phone-frame" id="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-ui">
-              <div class="ui-header">
-                <span>Futurit</span>
-                <span>2036</span>
-              </div>
-              <div class="ui-balance">
-                <div class="ui-balance-label" data-lang="ui-wealth">Patrimonio proyectado</div>
-                <div class="ui-balance-value">€<span id="balance-counter" data-count="284500">0</span></div>
-                <div class="ui-balance-delta" data-lang="ui-balance-delta">+12,4% · escenario base</div>
-              </div>
-              <div class="ui-chart-line">
-                <svg viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="rgba(124,106,239,0.35)"/>
-                      <stop offset="100%" stop-color="rgba(124,106,239,0)"/>
-                    </linearGradient>
-                  </defs>
-                  <path class="chart-area" d="M0,65 L25,58 L50,52 L75,44 L100,38 L125,30 L150,22 L175,18 L200,12 L200,80 L0,80 Z" fill="url(#chart-fill)"/>
-                  <path class="chart-stroke" d="M0,65 L25,58 L50,52 L75,44 L100,38 L125,30 L150,22 L175,18 L200,12" fill="none" stroke="url(#beam-grad-phone)" stroke-width="2.5" stroke-linecap="round"/>
-                  <defs>
-                    <linearGradient id="beam-grad-phone" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stop-color="#7c6aef"/>
-                      <stop offset="100%" stop-color="#34d399"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
-              <div class="ui-goal">
-                <div class="ui-goal-top">
-                  <span data-lang="ui-goal">Fondo emergencia</span>
-                  <span>72%</span>
-                </div>
-                <div class="ui-progress"><span></span></div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
+    <p class="hero-disclaimer-bar" data-lang="hero-disclaimer">Herramienta educativa de simulación. No es asesoramiento financiero ni de inversión regulado.</p>
   </section>
 
   <section class="marquee-section" aria-hidden="true">
@@ -291,7 +260,7 @@
         <div class="marquee-group">
           <span class="marquee-item" data-lang="mq-7">Time Travel</span>
           <span class="marquee-item" data-lang="mq-8">Inflación real</span>
-          <span class="marquee-item" data-lang="mq-9">Sin suscripción</span>
+          <span class="marquee-item" data-lang="mq-9">Core gratis</span>
           <span class="marquee-item" data-lang="mq-10">Exporta tus datos</span>
           <span class="marquee-item" data-lang="mq-11">Crew patrimonial</span>
           <span class="marquee-item" data-lang="mq-12">Herramienta educativa</span>
@@ -299,7 +268,7 @@
         <div class="marquee-group" aria-hidden="true">
           <span class="marquee-item" data-lang="mq-7">Time Travel</span>
           <span class="marquee-item" data-lang="mq-8">Inflación real</span>
-          <span class="marquee-item" data-lang="mq-9">Sin suscripción</span>
+          <span class="marquee-item" data-lang="mq-9">Core gratis</span>
           <span class="marquee-item" data-lang="mq-10">Exporta tus datos</span>
           <span class="marquee-item" data-lang="mq-11">Crew patrimonial</span>
           <span class="marquee-item" data-lang="mq-12">Herramienta educativa</span>
@@ -311,7 +280,7 @@
   <section class="principles-section" aria-label="Principios">
     <div class="container principles-grid">
       <div class="principle-pill reveal"><span class="principle-icon">◆</span><span data-lang="principle-1">Local-first</span></div>
-      <div class="principle-pill reveal reveal-delay-1"><span class="principle-icon">◆</span><span data-lang="principle-2">Sin suscripción</span></div>
+      <div class="principle-pill reveal reveal-delay-1"><span class="principle-icon">◆</span><span data-lang="principle-2">Core gratis</span></div>
       <div class="principle-pill reveal reveal-delay-2"><span class="principle-icon">◆</span><span data-lang="principle-3">Herramienta educativa</span></div>
       <div class="principle-pill reveal reveal-delay-3"><span class="principle-icon">◆</span><span data-lang="principle-4">iOS y Android</span></div>
     </div>
@@ -364,8 +333,8 @@
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-label"><span data-lang="section-features">Funciones</span></p>
-        <h2 data-lang="features-title">Todo lo que necesitas para modelar tu futuro financiero</h2>
-        <p data-lang="features-subtitle">Sin hojas de cálculo. Sin asesoramiento opaco. Solo claridad patrimonial en tu bolsillo.</p>
+        <h2 data-lang="features-title">Todo lo esencial para modelar tu futuro</h2>
+        <p data-lang="features-subtitle">Claridad patrimonial en el bolsillo — sin hojas de cálculo ni asesoramiento opaco.</p>
       </div>
 
       <div class="bento-grid">
@@ -375,10 +344,50 @@
           </div>
           <h3 data-lang="f1-title">Patrimonio proyectado</h3>
           <p data-lang="f1-desc">Dashboard con evolución mensual, inflación nominal o real y Time Travel para revisar el pasado.</p>
-          <div class="bento-mini-ui">
-            <div class="mini-chart" aria-hidden="true">
-              <span style="height:45%"></span><span style="height:62%"></span><span style="height:52%"></span>
-              <span style="height:78%"></span><span style="height:68%"></span><span style="height:92%"></span>
+          <div class="bento-mini-ui bento-dash" aria-hidden="true">
+            <div class="bento-dash-top">
+              <div>
+                <span class="bento-dash-label" data-lang="ui-wealth">Patrimonio proyectado</span>
+                <strong class="bento-dash-value">€284.500</strong>
+              </div>
+              <span class="bento-dash-delta">+12,4%</span>
+            </div>
+            <div class="bento-dash-chart">
+              <svg viewBox="0 0 320 140" preserveAspectRatio="none" class="bento-dash-svg">
+                <defs>
+                  <linearGradient id="dash-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(46,224,106,0.45)"/>
+                    <stop offset="100%" stop-color="rgba(46,224,106,0)"/>
+                  </linearGradient>
+                  <linearGradient id="dash-stroke" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#1a9f5c"/>
+                    <stop offset="100%" stop-color="#7dffab"/>
+                  </linearGradient>
+                  <filter id="dash-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <g class="bento-dash-grid" stroke="rgba(255,255,255,0.06)" stroke-width="1">
+                  <line x1="0" y1="28" x2="320" y2="28"/>
+                  <line x1="0" y1="56" x2="320" y2="56"/>
+                  <line x1="0" y1="84" x2="320" y2="84"/>
+                  <line x1="0" y1="112" x2="320" y2="112"/>
+                </g>
+                <path class="bento-dash-area" d="M0,108 C40,102 55,88 80,82 S120,70 160,58 S220,42 260,36 S300,22 320,18 L320,140 L0,140 Z" fill="url(#dash-fill)"/>
+                <path class="bento-dash-line" d="M0,108 C40,102 55,88 80,82 S120,70 160,58 S220,42 260,36 S300,22 320,18" fill="none" stroke="url(#dash-stroke)" stroke-width="2.75" stroke-linecap="round" filter="url(#dash-glow)"/>
+                <circle class="bento-dash-dot" cx="320" cy="18" r="4.5" fill="#7dffab"/>
+                <circle class="bento-dash-dot" cx="320" cy="18" r="8" fill="rgba(125,255,171,0.25)"/>
+              </svg>
+            </div>
+            <div class="bento-dash-axis">
+              <span data-lang="axis-today">Hoy</span>
+              <span data-lang="axis-3y">+3a</span>
+              <span data-lang="axis-6y">+6a</span>
+              <span data-lang="axis-10y">+10a</span>
             </div>
           </div>
         </article>
@@ -390,9 +399,47 @@
           <h3 data-lang="f4-title">Escenarios</h3>
           <p data-lang="f4-desc">Bandas optimista, base y pesimista de tu patrimonio futuro.</p>
           <div class="bento-mini-ui mini-scenarios" aria-hidden="true">
-            <div class="mini-scenario"><span class="tag tag-opt" data-lang="tag-opt">Optimista</span><span>€310k</span></div>
-            <div class="mini-scenario"><span class="tag tag-base" data-lang="tag-base">Base</span><span>€265k</span></div>
-            <div class="mini-scenario"><span class="tag tag-pes" data-lang="tag-pes">Pesimista</span><span>€218k</span></div>
+            <div class="mini-scenario-chart">
+              <svg viewBox="0 0 280 160" preserveAspectRatio="none" class="mini-scenario-svg">
+                <defs>
+                  <linearGradient id="band-opt-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(46,224,106,0.28)"/>
+                    <stop offset="100%" stop-color="rgba(46,224,106,0.02)"/>
+                  </linearGradient>
+                  <linearGradient id="band-base-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(125,211,252,0.22)"/>
+                    <stop offset="100%" stop-color="rgba(125,211,252,0.02)"/>
+                  </linearGradient>
+                  <linearGradient id="band-pes-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(251,113,133,0.2)"/>
+                    <stop offset="100%" stop-color="rgba(251,113,133,0.02)"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+                  <line x1="0" y1="32" x2="280" y2="32"/>
+                  <line x1="0" y1="64" x2="280" y2="64"/>
+                  <line x1="0" y1="96" x2="280" y2="96"/>
+                  <line x1="0" y1="128" x2="280" y2="128"/>
+                </g>
+                <!-- Optimistic band (top) -->
+                <path d="M0,92 C40,86 70,72 110,58 S180,32 220,24 S260,16 280,12 L280,48 C250,52 210,58 170,72 S80,98 0,108 Z" fill="url(#band-opt-fill)"/>
+                <path d="M0,92 C40,86 70,72 110,58 S180,32 220,24 S260,16 280,12" fill="none" stroke="#2ee06a" stroke-width="2" stroke-linecap="round"/>
+                <!-- Base band -->
+                <path d="M0,108 C45,100 75,90 115,78 S185,55 225,48 S260,42 280,38 L280,68 C250,72 210,78 170,90 S80,112 0,120 Z" fill="url(#band-base-fill)"/>
+                <path d="M0,108 C45,100 75,90 115,78 S185,55 225,48 S260,42 280,38" fill="none" stroke="#7dd3fc" stroke-width="2.25" stroke-linecap="round"/>
+                <!-- Pessimistic band (bottom) -->
+                <path d="M0,120 C50,114 80,106 120,98 S190,82 230,78 S260,74 280,72 L280,98 C250,100 210,104 170,112 S80,128 0,136 Z" fill="url(#band-pes-fill)"/>
+                <path d="M0,120 C50,114 80,106 120,98 S190,82 230,78 S260,74 280,72" fill="none" stroke="#fb7185" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="280" cy="12" r="3.5" fill="#2ee06a"/>
+                <circle cx="280" cy="38" r="3.5" fill="#7dd3fc"/>
+                <circle cx="280" cy="72" r="3.5" fill="#fb7185"/>
+              </svg>
+            </div>
+            <div class="mini-scenario-legend">
+              <div class="mini-scenario"><span class="tag tag-opt" data-lang="tag-opt">Optimista</span><span>€310k</span></div>
+              <div class="mini-scenario"><span class="tag tag-base" data-lang="tag-base">Base</span><span>€265k</span></div>
+              <div class="mini-scenario"><span class="tag tag-pes" data-lang="tag-pes">Pesimista</span><span>€218k</span></div>
+            </div>
           </div>
         </article>
 
@@ -428,7 +475,7 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
               </div>
               <h3 data-lang="f5-title">Coach de IA (opcional)</h3>
-              <p data-lang="f5-desc">Tu clave de Google Gemini. Sin clave, no se envía nada a terceros.</p>
+              <p data-lang="f5-desc">Preguntas sobre tu simulación con cuotas Free/Plus. Futurit procesa la consulta; Google Gemini genera la respuesta. Sin coach, tus datos no salen del dispositivo.</p>
             </div>
             <div class="bento-mini-ui mini-chat" aria-hidden="true">
               <div class="chat-bubble chat-user" data-lang="chat-user">¿Cómo va mi meta de emergencia?</div>
@@ -465,24 +512,46 @@
           <div class="excel-mock">
             <div class="excel-toolbar"><span></span><span></span><span></span></div>
             <div class="excel-grid">
-              <div class="excel-cell head" data-lang="excel-head-asset">Activo</div><div class="excel-cell head" data-lang="excel-head-value">Valor</div><div class="excel-cell head" data-lang="excel-head-pct">%</div>
-              <div class="excel-cell" data-lang="excel-row-1">Fondo A</div><div class="excel-cell num">84.200</div><div class="excel-cell num">68%</div>
-              <div class="excel-cell" data-lang="excel-row-2">Cuenta</div><div class="excel-cell num">22.000</div><div class="excel-cell num">19%</div>
-              <div class="excel-cell" data-lang="excel-row-3">Cripto</div><div class="excel-cell num">8.400</div><div class="excel-cell num err">105%</div>
-              <div class="excel-cell warn" style="grid-column:span 3" data-lang="excel-warn">⚠ Fórmulas desactualizadas · Sin escenarios</div>
+              <div class="excel-cell head" data-lang="excel-head-asset">Activo</div>
+              <div class="excel-cell head excel-cell--val" data-lang="excel-head-value">Valor</div>
+              <div class="excel-cell" data-lang="excel-row-1">Fondo A</div>
+              <div class="excel-cell num excel-cell--val">€84.200</div>
+              <div class="excel-cell" data-lang="excel-row-2">Cuenta</div>
+              <div class="excel-cell num excel-cell--val">€22.000</div>
+              <div class="excel-cell" data-lang="excel-row-3">Cripto</div>
+              <div class="excel-cell num err excel-cell--val">€8.400</div>
+              <div class="excel-cell warn" style="grid-column:span 2" data-lang="excel-warn">⚠ Fórmulas desactualizadas · Sin escenarios</div>
             </div>
           </div>
         </div>
         <div class="compare-layer compare-app" id="compare-app-layer" aria-hidden="true">
           <div class="compare-app-ui">
             <div class="compare-app-header">
-              <span>Futurit</span>
+              <img src="./assets/logo.png" alt="Futurit" class="compare-app-logo" width="120" height="53" loading="lazy" decoding="async">
               <span class="viz-pill" data-lang="viz-pill">Escenario base</span>
             </div>
             <p class="compare-app-label" data-lang="ui-wealth">Patrimonio proyectado</p>
             <p class="compare-app-value num-tabular">€284.500</p>
             <div class="compare-app-chart">
-              <svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10" fill="none" stroke="url(#cmp-grad)" stroke-width="2.5"/><defs><linearGradient id="cmp-grad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7c6aef"/><stop offset="1" stop-color="#34d399"/></linearGradient></defs></svg>
+              <svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="cmp-fill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(46,224,106,0.35)"/>
+                    <stop offset="100%" stop-color="rgba(46,224,106,0)"/>
+                  </linearGradient>
+                  <linearGradient id="cmp-grad" x1="0" y1="0" x2="1" y2="0">
+                    <stop stop-color="#1a9f5c"/>
+                    <stop offset="1" stop-color="#2ee06a"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10 L200,60 L0,60 Z" fill="url(#cmp-fill)"/>
+                <path d="M0,50 L40,42 L80,35 L120,28 L160,18 L200,10" fill="none" stroke="url(#cmp-grad)" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <div class="compare-app-chart-axis">
+                <span data-lang="axis-today">Hoy</span>
+                <span data-lang="axis-5y">+5a</span>
+                <span data-lang="axis-10y">+10a</span>
+              </div>
             </div>
             <div class="compare-app-scenarios">
               <span class="tag tag-opt" data-lang="tag-opt-amount">Optimista €310k</span>
@@ -508,7 +577,9 @@
           data-lang="compare-aria"
         >
         <span class="compare-label compare-label--left" data-lang="compare-left">Excel</span>
-        <span class="compare-label compare-label--right" data-lang="compare-right">Futurit</span>
+        <span class="compare-label compare-label--right">
+          <img src="./assets/logo.png" alt="Futurit" class="compare-label-logo" width="100" height="44" loading="lazy" decoding="async">
+        </span>
       </div>
     </div>
   </section>
@@ -516,7 +587,7 @@
   <section id="showcase" class="showcase-section">
     <div class="container">
       <div class="showcase-panel border-beam-wrap reveal">
-        <div class="showcase-layout">
+        <div class="showcase-layout showcase-layout--photo">
           <div class="showcase-copy">
             <p class="section-label"><span data-lang="section-showcase">Vista previa</span></p>
             <h2 class="showcase-title" data-lang="showcase-title">Preparando el lanzamiento</h2>
@@ -527,34 +598,103 @@
               <li data-lang="perk-3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Tus datos, tu dispositivo</li>
             </ul>
           </div>
-          <div class="showcase-viz">
-            <div class="viz-header">
-              <span data-lang="viz-title">Proyección año 10</span>
-              <span class="viz-pill" data-lang="viz-pill">Escenario base</span>
-            </div>
-            <div class="scenario-viz" aria-hidden="true">
-              <div class="scenario-row">
-                <span class="tag-opt" data-lang="tag-opt">Optimista</span>
-                <div class="scenario-bar"><span class="bar-opt-fill"></span></div>
-                <span>€310k</span>
+          <div class="showcase-device" aria-hidden="true">
+            <div class="phone-frame phone-frame--app">
+              <div class="phone-notch"></div>
+              <div class="phone-screen phone-screen--app">
+                <div class="app-status-bar">
+                  <span>9:41</span>
+                  <span class="app-status-icons" aria-hidden="true">
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><rect x="0" y="6" width="2" height="4" rx="0.4"/><rect x="3" y="4" width="2" height="6" rx="0.4"/><rect x="6" y="2" width="2" height="8" rx="0.4"/><rect x="9" y="0" width="2" height="10" rx="0.4"/></svg>
+                    <svg width="14" height="10" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 8a10 10 0 0 1 15.5-8.4M5 8a6 6 0 0 1 9.3-5M9 8a2 2 0 0 1 3-1.7"/><circle cx="20" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    <svg width="22" height="10" viewBox="0 0 28 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" stroke="currentColor"/><rect x="2" y="2" width="16" height="8" rx="1.2" fill="currentColor"/><path d="M24 4v4a2 2 0 0 0 0-4z" fill="currentColor" opacity=".45"/></svg>
+                  </span>
+                </div>
+
+                <div class="app-logo-bar">
+                  <span class="app-logo-bar-spacer"></span>
+                  <img src="./assets/logo.png" alt="Futurit" class="app-logo-img" width="200" height="88" decoding="async">
+                  <span class="app-logo-bar-spacer app-logo-bar-spacer--end">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                  </span>
+                </div>
+
+                <div class="app-body">
+                  <h3 class="app-screen-title" data-lang="mock-title">Tu resumen</h3>
+                  <p class="app-screen-sub" data-lang="mock-sub">Proyecta, juega con el tiempo y mira crecer tu plan.</p>
+
+                  <div class="app-card app-card--patrimonio">
+                    <div class="app-card-label-row">
+                      <span data-lang="ui-wealth">Patrimonio proyectado</span>
+                      <span class="app-chip">2032 · 42a</span>
+                    </div>
+                    <strong class="app-card-value">€284.500</strong>
+                    <span class="app-card-delta">+12,4% <span data-lang="mock-vs">vs mes anterior</span></span>
+                    <svg class="app-mini-chart" viewBox="0 0 220 56" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="mock-fill" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="rgba(167,139,250,0.45)"/>
+                          <stop offset="100%" stop-color="rgba(167,139,250,0)"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,44 C30,40 50,36 70,30 S110,18 140,16 S180,20 220,8 L220,56 L0,56 Z" fill="url(#mock-fill)"/>
+                      <path d="M0,44 C30,40 50,36 70,30 S110,18 140,16 S180,20 220,8" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+
+                  <div class="app-card app-card--travel">
+                    <div class="app-card-label-row">
+                      <span data-lang="mock-travel">Time Travel</span>
+                      <span class="app-chip app-chip--mint">Mes 48</span>
+                    </div>
+                    <div class="app-slider" aria-hidden="true"><span style="width:42%"></span></div>
+                  </div>
+
+                  <div class="app-card app-card--goal">
+                    <div class="app-card-label-row">
+                      <span data-lang="goal-1">Casa 2032</span>
+                      <span>72%</span>
+                    </div>
+                    <div class="ui-progress"><span style="width:72%"></span></div>
+                  </div>
+                </div>
+
+                <nav class="app-tabbar" aria-hidden="true">
+                  <span class="app-tab is-active">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10v11h6v-6h6v6h6V10z"/></svg>
+                    <span data-lang="mock-tab-home">Inicio</span>
+                  </span>
+                  <span class="app-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 19V9l7-5 7 5v10"/><path d="M9 19v-6h6v6"/></svg>
+                    <span data-lang="mock-tab-plan">Plan</span>
+                  </span>
+                  <span class="app-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 6V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v1"/></svg>
+                    <span data-lang="mock-tab-assets">Activos</span>
+                  </span>
+                  <span class="app-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+                    <span data-lang="mock-tab-stress">Escenarios</span>
+                  </span>
+                </nav>
               </div>
-              <div class="scenario-row">
-                <span class="tag-base" data-lang="tag-base">Base</span>
-                <div class="scenario-bar"><span class="bar-base-fill"></span></div>
-                <span>€265k</span>
-              </div>
-              <div class="scenario-row">
-                <span class="tag-pes" data-lang="tag-pes">Pesimista</span>
-                <div class="scenario-bar"><span class="bar-pes-fill"></span></div>
-                <span>€218k</span>
-              </div>
-            </div>
-            <div class="viz-footer">
-              <div><span class="viz-label" data-lang="viz-growth">Crecimiento anual</span><strong data-lang="viz-growth-val">+8,2%</strong></div>
-              <div><span class="viz-label" data-lang="viz-horizon">Horizonte</span><strong data-lang="viz-horizon-val">10 años</strong></div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mascot-band" aria-label="Coach Futurit">
+    <div class="container mascot-band-inner">
+      <picture>
+        <source srcset="./assets/mascot-hero.webp" type="image/webp">
+        <img src="./assets/mascot-hero.png" alt="Mascota Futurit" class="mascot-band-img" width="640" height="640" loading="lazy" decoding="async">
+      </picture>
+      <div class="mascot-band-copy">
+        <p class="section-label"><span data-lang="section-coach">Coach</span></p>
+        <h2 data-lang="coach-band-title">Tu copiloto patrimonial</h2>
+        <p data-lang="coach-band-desc">El coach responde sobre tu simulación con cuotas claras. Local-first: si no lo usas, nada sale del teléfono.</p>
       </div>
     </div>
   </section>
@@ -580,7 +720,15 @@
         </details>
         <details class="faq-item reveal reveal-delay-3">
           <summary data-lang="faq-q4">¿Tiene coste la app?</summary>
-          <p data-lang="faq-a4">Futurit será gratuito en su lanzamiento. El coach de IA opcional usa tu propia clave de Google Gemini.</p>
+          <p data-lang="faq-a4">El simulador core será gratuito. Futurit Plus (coach ampliado, snapshots, export sin marca) puede llegar más adelante vía compra in-app; hoy no hay cobro. El coach opcional funciona con la cuenta de Futurit y cuotas Free/Plus.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary data-lang="faq-q5">¿Qué datos usa el coach de IA?</summary>
+          <p data-lang="faq-a5">Solo si lo activas: tu pregunta y un resumen estructurado de la simulación. Futurit los envía a Google Gemini para generar la respuesta. Puedes dejar de usarlo en cualquier momento; el resto de la app sigue local.</p>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary data-lang="faq-q6">¿Qué datos recoge esta web?</summary>
+          <p data-lang="faq-a6">Solo tu email si te apuntas a la lista de espera, más el registro de consentimientos. No vendemos tus datos. Detalle en la Política de Privacidad.</p>
         </details>
       </div>
     </div>
@@ -603,7 +751,8 @@
           <form id="waitlist-form" class="waitlist-form" method="POST">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
             <input type="hidden" name="product" value="Futurit">
-            <input type="hidden" name="terms_version" value="2026-05">
+            <input type="hidden" name="terms_version" value="2026-09">
+            <input type="hidden" name="age_confirmed" id="age-confirmed-field" value="no">
             <input type="hidden" name="privacy_accepted" id="privacy-accepted-field" value="no">
             <input type="hidden" name="marketing_consent" id="marketing-consent-field" value="no">
             <input type="hidden" name="consent_language" id="consent-language-field" value="es">
@@ -615,7 +764,7 @@
 
             <div class="form-check">
               <input type="checkbox" id="terms" required />
-              <label for="terms"><span data-lang="terms-text">Acepto los Términos y la Privacidad.</span></label>
+              <label for="terms"><span data-lang="terms-text">Confirmo que tengo al menos 16 años y acepto los Términos y la Privacidad.</span></label>
             </div>
             <div class="form-check">
               <input type="checkbox" id="marketing" />

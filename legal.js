@@ -1,10 +1,10 @@
-/* Legal texts — Futurit waitlist (EN/ES). Version: 2026-05 */
+/* Legal texts — Futurit waitlist (EN/ES). Version: 2026-09 */
 const LEGAL_TEXTS = {
   en: {
     terms: {
       title: "Terms & Conditions",
       content: `
-<p><strong>Version:</strong> May 2026 · <strong>Website:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
+<p><strong>Version:</strong> September 2026 · <strong>Website:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
 <br>
 <p>These Terms & Conditions ("Terms") govern your access to the Futurit website and waitlist. By using the site or submitting the form, you agree to these Terms, our Privacy Policy, and Legal Notice.</p>
 <br>
@@ -24,7 +24,7 @@ Registering on the waitlist does not create a purchase contract, employment, par
 You must not: submit false data; use bots or automated means; attempt to disrupt the site; infringe intellectual property or third-party rights; or use the waitlist for unlawful purposes.</p>
 <br>
 <p><strong>6. Intellectual property</strong><br>
-Trademarks, logos, text, design, and graphics on this site belong to Futurit or their respective owners. Reproduction without permission is prohibited.</p>
+Trademarks, logos, text, design, mascot, and graphics on this site belong to Futurit or their respective owners. Reproduction without permission is prohibited.</p>
 <br>
 <p><strong>7. Third-party links and services</strong><br>
 The site may link to third parties (e.g. social networks, Formspree). We are not responsible for their content or practices. Your use of third-party services is at your own risk.</p>
@@ -58,13 +58,13 @@ These Terms are governed by the laws of <strong>Spain</strong>, without prejudic
       title: "Privacy Policy",
       content: `
 <p><strong>Data controller:</strong> Buildit Labs · <a href="mailto:aplicacionfuturit@gmail.com">aplicacionfuturit@gmail.com</a><br>
-<strong>Version:</strong> May 2026 · <strong>Website:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
+<strong>Version:</strong> September 2026 · <strong>Website:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
 <br>
-<p>This Privacy Policy describes how we process personal data when you visit our site and join the waitlist, in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Spanish data protection law (LOPDGDD).</p>
+<p>This Privacy Policy describes how we process personal data when you visit our site and join the waitlist, in accordance with Regulation (EU) 2016/679 (GDPR) and applicable Spanish data protection law (LOPDGDD). For the mobile app (local-first storage and optional AI coach), see also <a href="./privacidad.html">privacidad.html</a>.</p>
 <br>
 <p><strong>1. Categories of data</strong><br>
 - <strong>Identification:</strong> email address.<br>
-- <strong>Consent records:</strong> acceptance of terms/privacy, optional marketing consent, language, terms version, timestamp (via form fields).<br>
+- <strong>Consent records:</strong> acceptance of terms/privacy, age confirmation (≥16), optional marketing consent, language, terms version, timestamp (via form fields).<br>
 - <strong>Technical data:</strong> data that Formspree or our host may log (IP address, user agent, submission metadata).<br>
 - <strong>Local storage:</strong> language preference and cookie consent choice in your browser.</p>
 <br>
@@ -115,10 +115,10 @@ We may update this policy. The current version is always available on this websi
 <strong>Activity:</strong> Promotion of the Futurit wealth simulation app (in development) and management of a waitlist.</p>
 <br>
 <p><strong>Purpose of the website</strong><br>
-To provide information about Futurit and allow users to voluntarily register interest via email. Content is for general information only.</p>
+To provide information about Futurit and allow users to voluntarily register interest via email. Content is for general information only and does not constitute financial advice.</p>
 <br>
 <p><strong>Intellectual and industrial property</strong><br>
-All contents of this website (texts, images, logos, design, source code) are protected. Reproduction, distribution, or transformation without express authorization is prohibited.</p>
+All contents of this website (texts, images, logos, mascot, design, source code) are protected. Reproduction, distribution, or transformation without express authorization is prohibited.</p>
 <br>
 <p><strong>Liability</strong><br>
 Buildit Labs is not responsible for misuse of the website by users, nor for damages arising from interruptions, viruses, or third-party actions beyond our reasonable control. We strive to keep information accurate but do not warrant it is complete or up to date.</p>
@@ -133,7 +133,7 @@ Processing of personal data is described in our <span class="modal-link" data-ty
     cookies: {
       title: "Cookie Policy",
       content: `
-<p><strong>Version:</strong> May 2026</p>
+<p><strong>Version:</strong> September 2026</p>
 <br>
 <p>This site uses cookies and similar technologies as described below.</p>
 <br>
@@ -145,7 +145,7 @@ These are required for basic operation and do not require consent under ePrivacy
 <p><strong>2. Third-party services</strong><br>
 When you use the waitlist form, data is sent to <strong>Formspree</strong>. When pages load, resources may be requested from:<br>
 - <strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com)<br>
-These providers may process technical data (IP, device info). See their respective privacy policies.</p>
+These providers may process technical data (IP, device info). See their respective privacy policies. You can reject non-essential processing via the banner.</p>
 <br>
 <p><strong>3. Your choice</strong><br>
 You can accept or reject non-essential processing via the cookie banner. Rejecting does not block access to the site, but some preferences may not be saved. You can delete localStorage via your browser settings.</p>
@@ -159,7 +159,7 @@ See our <span class="modal-link" data-type="privacy">Privacy Policy</span> or co
     terms: {
       title: "Términos y Condiciones",
       content: `
-<p><strong>Versión:</strong> mayo 2026 · <strong>Web:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
+<p><strong>Versión:</strong> septiembre 2026 · <strong>Web:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
 <br>
 <p>Estos Términos y Condiciones ("Términos") regulan el acceso a la web de Futurit y a la lista de espera. Al usar el sitio o enviar el formulario, aceptas estos Términos, nuestra Política de Privacidad y el Aviso Legal.</p>
 <br>
@@ -179,7 +179,7 @@ Apuntarse a la lista no crea contrato de compra, laboral, societario ni obligaci
 No debes: enviar datos falsos; usar bots; intentar alterar el sitio; vulnerar propiedad intelectual o derechos de terceros; ni usar la lista con fines ilícitos.</p>
 <br>
 <p><strong>6. Propiedad intelectual</strong><br>
-Marcas, logos, textos, diseño y gráficos del sitio pertenecen a Buildit Labs o a sus licenciantes. Queda prohibida su reproducción sin autorización.</p>
+Marcas, logos, textos, diseño, mascota y gráficos del sitio pertenecen a Buildit Labs o a sus licenciantes. Queda prohibida su reproducción sin autorización.</p>
 <br>
 <p><strong>7. Enlaces y servicios de terceros</strong><br>
 El sitio puede enlazar a terceros (redes sociales, Formspree). No somos responsables de su contenido o prácticas. Su uso es bajo tu propio riesgo.</p>
@@ -213,47 +213,46 @@ Estos Términos se rigen por la ley de <strong>España</strong>, sin perjuicio d
       title: "Política de Privacidad",
       content: `
 <p><strong>Responsable:</strong> Buildit Labs · <a href="mailto:aplicacionfuturit@gmail.com">aplicacionfuturit@gmail.com</a><br>
-<strong>Versión:</strong> mayo 2026 · <strong>Web:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
+<strong>Versión:</strong> septiembre 2026 · <strong>Web:</strong> <a href="https://www.getfuturit.app/">getfuturit.app</a></p>
 <br>
-<p>Esta Política de Privacidad describe cómo tratamos datos personales cuando visitas nuestro sitio y te apuntas a la lista de espera, conforme al Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD.</p>
+<p>Esta Política de Privacidad describe cómo tratamos datos personales cuando visitas nuestro sitio y te apuntas a la lista de espera, conforme al Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD. Para la app (datos locales y coach de IA opcional), consulta también <a href="./privacidad.html">privacidad.html</a>.</p>
 <br>
-<p><strong>1. Datos que tratamos</strong><br>
-- <strong>Identificación:</strong> correo electrónico.<br>
-- <strong>Registro de consentimientos:</strong> aceptación de términos/privacidad, marketing opcional, idioma, versión de términos, marca temporal (campos del formulario).<br>
-- <strong>Datos técnicos:</strong> los que Formspree o el alojamiento puedan registrar (IP, navegador, metadatos del envío).<br>
-- <strong>Almacenamiento local:</strong> idioma y elección de cookies en tu navegador.</p>
+<p><strong>1. Categorías de datos</strong><br>
+- <strong>Identificación:</strong> dirección de email.<br>
+- <strong>Registros de consentimiento:</strong> aceptación de términos/privacidad, confirmación de edad (≥16), consentimiento comercial opcional, idioma, versión de términos, marca de tiempo.<br>
+- <strong>Datos técnicos:</strong> los que Formspree o el hosting puedan registrar (IP, user-agent, metadatos del envío).<br>
+- <strong>Almacenamiento local:</strong> idioma y preferencia de cookies en el navegador.</p>
 <br>
-<p><strong>2. Finalidades y bases legales</strong><br>
-| Finalidad | Base legal |<br>
-| Gestión de la lista y comunicaciones de lanzamiento | Consentimiento (art. 6.1.a RGPD) |<br>
+<p><strong>2. Finalidades y bases jurídicas</strong><br>
+| Finalidad | Base jurídica |<br>
+| Gestión de la lista y avisos de lanzamiento | Consentimiento (art. 6.1.a RGPD) |<br>
 | Emails promocionales | Consentimiento (casilla opcional) |<br>
-| Seguridad, prevención de abusos, obligaciones legales | Interés legítimo / obligación legal |</p>
+| Seguridad, prevención de abuso, cumplimiento legal | Interés legítimo / obligación legal |</p>
 <br>
 <p><strong>3. Formspree (encargado)</strong><br>
-Usamos <strong>Formspree, Inc.</strong> (EE. UU.) para recibir los formularios. Trata los datos siguiendo nuestras instrucciones. Política: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>. Pueden producirse transferencias internacionales con garantías adecuadas (p. ej. Cláusulas Contractuales Tipo).</p>
+Usamos <strong>Formspree, Inc.</strong> (EE. UU.) para recibir los formularios. Política: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>. Puede haber transferencias internacionales con garantías adecuadas (p. ej. CCT).</p>
 <br>
 <p><strong>4. Otros destinatarios</strong><br>
-No vendemos ni alquilamos tus datos. Destinatarios posibles: alojamiento/CDN, herramientas de email (si consentiste marketing) y autoridades cuando la ley lo exija.</p>
+No vendemos ni alquilamos tus datos. Destinatarios posibles: hosting/CDN, herramientas de email (si consentiste marketing) y autoridades cuando la ley lo exija.</p>
 <br>
-<p><strong>5. Plazos de conservación</strong><br>
-- Lista de espera: hasta que retires el consentimiento, te des de baja o eliminemos la lista, y en todo caso solo el tiempo necesario (habitualmente hasta 24 meses tras el último contacto, salvo oposición previa).<br>
-- Registros de consentimiento: el tiempo necesario como prueba (habitualmente hasta 5 años cuando proceda por responsabilidad).</p>
+<p><strong>5. Conservación</strong><br>
+- Lista de espera: hasta retirada del consentimiento, baja o borrado de la lista, y en todo caso no más de lo necesario (habitualmente hasta 24 meses tras el último contacto).<br>
+- Logs de consentimiento: el plazo legal de acreditación (a menudo hasta 5 años).</p>
 <br>
 <p><strong>6. Seguridad</strong><br>
-Usamos HTTPS y proveedores reconocidos. Ninguna transmisión por Internet es 100 % segura; no podemos garantizar seguridad absoluta.</p>
+Usamos HTTPS y proveedores de confianza. Ninguna transmisión por Internet es 100% segura.</p>
 <br>
 <p><strong>7. Tus derechos</strong><br>
-Puedes solicitar acceso, rectificación, supresión, limitación, portabilidad y retirar el consentimiento en <a href="mailto:aplicacionfuturit@gmail.com?subject=Solicitud%20protecci%C3%B3n%20de%20datos">aplicacionfuturit@gmail.com</a> (asunto: "Solicitud protección de datos"). Responderemos en el plazo legal (normalmente un mes).<br>
-Puedes reclamar ante la <strong>AEPD</strong>: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
+Puedes solicitar acceso, rectificación, supresión, limitación, portabilidad y retirada del consentimiento en <a href="mailto:aplicacionfuturit@gmail.com?subject=Protecci%C3%B3n%20de%20datos">aplicacionfuturit@gmail.com</a>. Reclamación ante la AEPD: <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
 <br>
 <p><strong>8. Marketing</strong><br>
-Si te apuntas al marketing, podrás recibir comunicaciones promocionales con opción de baja en cada mensaje o escribiéndonos en cualquier momento.</p>
+Si optas, puedes recibir emails promocionales con opción de baja en cada mensaje.</p>
 <br>
 <p><strong>9. Menores</strong><br>
-La lista de espera de esta web no está dirigida a menores de 16 años. La app Futurit está pensada para usuarios de 18 años o más. No recopilamos datos de menores de forma consciente.</p>
+La lista de espera no está dirigida a menores de 16 años. La app Futurit está pensada para mayores de 18.</p>
 <br>
 <p><strong>10. Decisiones automatizadas</strong><br>
-No realizamos perfilado ni decisiones automatizadas con efectos jurídicos significativos.</p>
+No realizamos elaboración de perfiles con efectos jurídicos significativos.</p>
 <br>
 <p><strong>11. Cambios</strong><br>
 Podemos actualizar esta política. La versión vigente estará siempre en esta web.</p>
@@ -262,51 +261,51 @@ Podemos actualizar esta política. La versión vigente estará siempre en esta w
     legal: {
       title: "Aviso Legal",
       content: `
-<p>En cumplimiento de la Ley 34/2002 (LSSI-CE) de servicios de la sociedad de la información:</p>
+<p>En cumplimiento de la Ley 34/2002 (LSSI-CE):</p>
 <br>
-<p><strong>Titular de la web:</strong> Buildit Labs<br>
-<strong>Sitio web:</strong> <a href="https://www.getfuturit.app/">https://www.getfuturit.app</a><br>
+<p><strong>Titular del sitio:</strong> Buildit Labs<br>
+<strong>Web:</strong> <a href="https://www.getfuturit.app/">https://www.getfuturit.app</a><br>
 <strong>Email de contacto:</strong> <a href="mailto:aplicacionfuturit@gmail.com">aplicacionfuturit@gmail.com</a><br>
-<strong>Actividad:</strong> Promoción de la app de simulación patrimonial Futurit (en desarrollo) y gestión de lista de espera.</p>
+<strong>Actividad:</strong> promoción de la app de simulación patrimonial Futurit (en desarrollo) y gestión de una lista de espera.</p>
 <br>
 <p><strong>Objeto del sitio</strong><br>
-Informar sobre Futurit y permitir el registro voluntario de interés por correo electrónico. Los contenidos tienen carácter informativo.</p>
+Informar sobre Futurit y permitir el registro voluntario de interés por email. Los contenidos son informativos y no constituyen asesoramiento financiero.</p>
 <br>
 <p><strong>Propiedad intelectual e industrial</strong><br>
-Todos los contenidos (textos, imágenes, logos, diseño, código) están protegidos. Queda prohibida su reproducción o transformación sin autorización expresa.</p>
+Todos los contenidos (textos, imágenes, logos, mascota, diseño, código) están protegidos. Queda prohibida su reproducción sin autorización expresa.</p>
 <br>
 <p><strong>Responsabilidad</strong><br>
-Buildit Labs no se hace responsable del uso indebido del sitio por usuarios, ni de daños por interrupciones, virus o actuaciones de terceros fuera de nuestro control razonable. Procuramos que la información sea correcta, sin garantizar que esté completa o actualizada.</p>
+Buildit Labs no responde del uso indebido del sitio ni de daños por interrupciones, virus o actuaciones de terceros fuera de nuestro control razonable.</p>
 <br>
 <p><strong>Enlaces externos</strong><br>
-Los enlaces a sitios de terceros (Instagram, Formspree, etc.) se ofrecen por comodidad. No controlamos ni somos responsables de su contenido o políticas.</p>
+Los enlaces a terceros (Instagram, Formspree, etc.) se facilitan por comodidad. No controlamos ni respondemos de su contenido o políticas.</p>
 <br>
 <p><strong>Datos personales</strong><br>
-El tratamiento de datos se describe en nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span>.</p>
+El tratamiento se describe en nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span>.</p>
 `
     },
     cookies: {
       title: "Política de Cookies",
       content: `
-<p><strong>Versión:</strong> mayo 2026</p>
+<p><strong>Versión:</strong> septiembre 2026</p>
 <br>
-<p>Este sitio utiliza cookies y tecnologías similares según se describe a continuación.</p>
+<p>Este sitio usa cookies y tecnologías similares como se describe a continuación.</p>
 <br>
 <p><strong>1. Estrictamente necesarias / técnicas</strong><br>
-- <strong>futurit-lang</strong> (localStorage): recuerda tu idioma.<br>
-- <strong>futurit-cookie-consent</strong> (localStorage): recuerda si aceptaste o rechazaste lo no esencial.<br>
-No requieren consentimiento según la normativa de cookies para su funcionamiento básico.</p>
+- <strong>futurit-lang</strong> (localStorage): idioma.<br>
+- <strong>futurit-cookie-consent</strong> (localStorage): aceptación o rechazo de tratamientos no esenciales.<br>
+Necesarias para el funcionamiento básico.</p>
 <br>
 <p><strong>2. Servicios de terceros</strong><br>
-Al usar el formulario, los datos se envían a <strong>Formspree</strong>. Al cargar la página pueden solicitarse recursos de:<br>
+Al usar el formulario, los datos se envían a <strong>Formspree</strong>. Al cargar páginas pueden solicitarse recursos de:<br>
 - <strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com)<br>
-Estos proveedores pueden tratar datos técnicos (IP, dispositivo). Consulta sus políticas de privacidad.</p>
+Estos proveedores pueden tratar datos técnicos (IP, dispositivo). Puedes rechazar tratamientos no esenciales en el banner.</p>
 <br>
 <p><strong>3. Tu elección</strong><br>
-Puedes aceptar o rechazar lo no esencial en el banner de cookies. Rechazar no bloquea el acceso al sitio. Puedes borrar el localStorage desde tu navegador.</p>
+Puedes aceptar o rechazar. Rechazar no bloquea el acceso al sitio. Puedes borrar el localStorage desde el navegador.</p>
 <br>
 <p><strong>4. Más información</strong><br>
-Consulta nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span> o escribe a <a href="mailto:aplicacionfuturit@gmail.com">aplicacionfuturit@gmail.com</a>.</p>
+Consulta la <span class="modal-link" data-type="privacy">Política de Privacidad</span> o escribe a <a href="mailto:aplicacionfuturit@gmail.com">aplicacionfuturit@gmail.com</a>.</p>
 `
     }
   }

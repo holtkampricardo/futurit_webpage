@@ -17,9 +17,11 @@ const translations = {
     'nav-compare': 'Por qué',
     'nav-faq': 'FAQ',
     'notify-me': 'Avísame',
-    'hero-badge': 'Futurit · Simulación patrimonial',
-    'hero-title': 'Haz crecer tu visión del patrimonio con Futurit',
-    'hero-title-accent': ['patrimonio', 'Futurit'],
+    'hero-new': 'Nuevo',
+    'hero-eyebrow': 'Simulación patrimonial clara',
+    'hero-title': 'Construye una visión más clara de tu patrimonio',
+    'hero-title-accent': ['visión', 'patrimonio'],
+    'hero-subtitle': 'Activos, metas y escenarios en tu bolsillo. Datos en tu dispositivo.',
     'hero-subtitle-prefix': 'Modela tus',
     'hero-subtitle-suffix': ' con claridad. Tus datos, en tu dispositivo.',
     'hero-rotate-words': ['activos', 'metas', 'escenarios'],
@@ -28,7 +30,26 @@ const translations = {
     'hero-local': 'Datos en el dispositivo',
     'notify-me-cta': 'Avísame cuando esté disponible',
     'hero-disclaimer':
-      'Futurit es una herramienta educativa de simulación. No ofrece asesoramiento financiero ni de inversión regulado.',
+      'Herramienta educativa de simulación. No es asesoramiento financiero ni de inversión regulado.',
+    'section-coach': 'Coach',
+    'coach-band-title': 'Tu copiloto patrimonial',
+    'coach-band-desc':
+      'El coach responde sobre tu simulación con cuotas claras. Local-first: si no lo usas, nada sale del teléfono.',
+    'f5-title': 'Coach de IA (opcional)',
+    'f5-desc':
+      'Preguntas sobre tu simulación con cuotas Free/Plus. Futurit procesa la consulta; Google Gemini genera la respuesta. Sin coach, tus datos no salen del dispositivo.',
+    'faq-a4':
+      'El simulador patrimonial core será gratuito. Futurit Plus (coach ampliado, snapshots, export sin marca) puede llegar más adelante vía compra in-app; hoy no hay cobro. El coach opcional funciona con la cuenta de Futurit y cuotas Free/Plus.',
+    'faq-q5': '¿Qué datos usa el coach de IA?',
+    'faq-a5':
+      'Solo si lo activas: tu pregunta y un resumen estructurado de la simulación. Futurit los envía a Google Gemini para generar la respuesta. Puedes dejar de usarlo en cualquier momento; el resto de la app sigue local.',
+    'faq-q6': '¿Qué datos recoge esta web?',
+    'faq-a6':
+      'Solo tu email si te apuntas a la lista de espera, más el registro de consentimientos. No vendemos tus datos. Detalle en la Política de Privacidad.',
+    'terms-text':
+      'Confirmo que tengo al menos 16 años y que he leído y acepto los <span class="modal-link" data-type="terms">Términos y Condiciones</span>, la <span class="modal-link" data-type="privacy">Política de Privacidad</span> y el <span class="modal-link" data-type="legal">Aviso Legal</span>.',
+    'cookie-text':
+      'Usamos almacenamiento esencial (idioma, consentimiento) y, si aceptas, servicios de terceros (Formspree, fuentes). Consulta nuestra <span class="modal-link" data-type="cookies">Política de Cookies</span>.',
     'float-scenario': 'Escenario base',
     'float-goal': 'Meta activa',
     'ui-wealth': 'Patrimonio proyectado',
@@ -41,12 +62,12 @@ const translations = {
     'mq-6': 'Coach IA opcional',
     'mq-7': 'Time Travel',
     'mq-8': 'Inflación real',
-    'mq-9': 'Sin suscripción',
+    'mq-9': 'Core gratis',
     'mq-10': 'Exporta tus datos',
     'mq-11': 'Crew patrimonial',
     'mq-12': 'Herramienta educativa',
     'principle-1': 'Local-first',
-    'principle-2': 'Sin suscripción',
+    'principle-2': 'Core gratis',
     'principle-3': 'Herramienta educativa',
     'principle-4': 'iOS y Android',
     'stat-1': 'Datos almacenados en tu dispositivo. Sin cuenta obligatoria.',
@@ -66,9 +87,9 @@ const translations = {
     'step-3-desc':
       'Explora proyecciones, Time Travel y evolución mensual. Tú mantienes el control.',
     'section-showcase': 'Vista previa',
-    'features-title': 'Todo lo que necesitas para modelar tu futuro financiero',
+    'features-title': 'Todo lo esencial para modelar tu futuro',
     'features-subtitle':
-      'Sin hojas de cálculo. Sin asesoramiento opaco. Solo claridad patrimonial en tu bolsillo.',
+      'Claridad patrimonial en el bolsillo — sin hojas de cálculo ni asesoramiento opaco.',
     'f1-title': 'Patrimonio proyectado',
     'f1-desc':
       'Dashboard con evolución mensual, inflación nominal o real y Time Travel para revisar el pasado.',
@@ -78,8 +99,6 @@ const translations = {
     'f3-desc': 'Objetivos con plazo y seguimiento sin confundir patrimonio total.',
     'f4-title': 'Escenarios',
     'f4-desc': 'Bandas optimista, base y pesimista de tu patrimonio futuro.',
-    'f5-title': 'Coach de IA (opcional)',
-    'f5-desc': 'Tu clave de Google Gemini. Sin clave, no se envía nada a terceros.',
     'f6-title': 'Privacidad local',
     'f6-desc': 'Sin cuenta obligatoria. Tú controlas exportar y borrar.',
     'showcase-title': 'Preparando el lanzamiento',
@@ -88,6 +107,14 @@ const translations = {
     'perk-1': 'Sin hojas de cálculo',
     'perk-2': 'Sin asesoramiento opaco',
     'perk-3': 'Tus datos, tu dispositivo',
+    'mock-title': 'Tu resumen',
+    'mock-sub': 'Proyecta, juega con el tiempo y mira crecer tu plan.',
+    'mock-vs': 'vs mes anterior',
+    'mock-travel': 'Time Travel',
+    'mock-tab-home': 'Inicio',
+    'mock-tab-plan': 'Plan',
+    'mock-tab-assets': 'Activos',
+    'mock-tab-stress': 'Escenarios',
     'viz-title': 'Proyección año 10',
     'viz-pill': 'Escenario base',
     'viz-growth': 'Crecimiento anual',
@@ -116,8 +143,6 @@ const translations = {
     'faq-a3':
       'Estamos preparando el lanzamiento en la App Store y Google Play. Apúntate a la lista y te avisaremos cuando Futurit esté listo.',
     'faq-q4': '¿Tiene coste la app?',
-    'faq-a4':
-      'Futurit será gratuito en su lanzamiento. El coach de IA opcional usa tu propia clave de Google Gemini.',
     'cta-title': '¿Quieres ser de los primeros?',
     'cta-subtitle': 'Lista de espera para el lanzamiento en iOS y Android.',
     'cta-perk-1': 'Acceso anticipado al aviso de lanzamiento',
@@ -142,7 +167,7 @@ const translations = {
       'Futurit es un proyecto en desarrollo. Los contenidos de esta web son informativos y no constituyen asesoramiento financiero ni oferta.',
     'footer-rights': 'Todos los derechos reservados.',
     'cookie-text':
-      'Usamos almacenamiento esencial (idioma) y servicios de terceros (Formspree, fuentes). Consulta nuestra <span class="modal-link" data-type="cookies">Política de Cookies</span>.',
+      'Usamos almacenamiento esencial (idioma, consentimiento) y, si aceptas, servicios de terceros (Formspree, fuentes). Consulta nuestra <span class="modal-link" data-type="cookies">Política de Cookies</span>.',
     'cookie-reject': 'Rechazar no esenciales',
     'cookie-accept': 'Aceptar',
     'form-success': '¡Gracias! Te avisaremos cuando Futurit esté disponible.',
@@ -155,6 +180,11 @@ const translations = {
     'tag-opt-amount': 'Optimista €310k',
     'tag-base-amount': 'Base €265k',
     'tag-pes-amount': 'Pesimista €218k',
+    'axis-today': 'Hoy',
+    'axis-3y': '+3a',
+    'axis-5y': '+5a',
+    'axis-6y': '+6a',
+    'axis-10y': '+10a',
     'asset-1': 'Fondos indexados',
     'asset-2': 'Cuenta ahorro',
     'asset-3': 'Cripto',
@@ -174,9 +204,11 @@ const translations = {
     'nav-compare': 'Why',
     'nav-faq': 'FAQ',
     'notify-me': 'Notify me',
-    'hero-badge': 'Futurit · Wealth simulation',
-    'hero-title': 'Grow your view of your wealth with Futurit',
-    'hero-title-accent': ['wealth', 'Futurit'],
+    'hero-new': 'New',
+    'hero-eyebrow': 'Clear wealth simulation',
+    'hero-title': 'Build a clearer view of your wealth',
+    'hero-title-accent': ['clearer', 'wealth'],
+    'hero-subtitle': 'Assets, goals and scenarios in your pocket. Data stays on your device.',
     'hero-subtitle-prefix': 'Model your',
     'hero-subtitle-suffix': ' with clarity. Your data stays on your device.',
     'hero-rotate-words': ['assets', 'goals', 'scenarios'],
@@ -185,7 +217,22 @@ const translations = {
     'hero-local': 'Data on your device',
     'notify-me-cta': 'Notify me when it launches',
     'hero-disclaimer':
-      'Futurit is an educational simulation tool. It does not provide regulated financial or investment advice.',
+      'Educational simulation tool. Not regulated financial or investment advice.',
+    'section-coach': 'Coach',
+    'coach-band-title': 'Your wealth co-pilot',
+    'coach-band-desc':
+      'The coach answers questions about your simulation with clear quotas. Local-first: if you do not use it, nothing leaves your phone.',
+    'f5-title': 'AI coach (optional)',
+    'f5-desc':
+      'Ask about your simulation with Free/Plus quotas. Futurit processes the request; Google Gemini generates the answer. Without the coach, your data stays on-device.',
+    'faq-a4':
+      'The core wealth simulator will be free. Futurit Plus (expanded coach, snapshots, unbranded export) may arrive later via in-app purchase; there is no paid checkout today. The optional coach runs on Futurit’s account with Free/Plus quotas.',
+    'faq-q5': 'What data does the AI coach use?',
+    'faq-a5':
+      'Only if you use it: your question and a structured summary of the simulation. Futurit sends them to Google Gemini to generate the reply. You can stop using the coach anytime; the rest of the app stays local.',
+    'faq-q6': 'What data does this website collect?',
+    'faq-a6':
+      'Only your email if you join the waitlist, plus consent records. We do not sell your data. See the Privacy Policy for details.',
     'float-scenario': 'Base scenario',
     'float-goal': 'Active goal',
     'ui-wealth': 'Projected wealth',
@@ -198,7 +245,7 @@ const translations = {
     'mq-6': 'Optional AI coach',
     'mq-7': 'Time Travel',
     'mq-8': 'Real inflation',
-    'mq-9': 'No subscription',
+    'mq-9': 'Free core',
     'mq-10': 'Export your data',
     'mq-11': 'Wealth crew',
     'mq-12': 'Educational tool',
@@ -208,7 +255,7 @@ const translations = {
     'stat-3': 'App Store and Google Play launch coming. Waitlist is open.',
     'stat-3-value': 'iOS + Android',
     'principle-1': 'Local-first',
-    'principle-2': 'No subscription',
+    'principle-2': 'Free core',
     'principle-3': 'Educational tool',
     'principle-4': 'iOS & Android',
     'section-features': 'Features',
@@ -223,9 +270,9 @@ const translations = {
     'step-3-desc':
       'Explore projections, Time Travel and monthly evolution. You stay in control.',
     'section-showcase': 'Preview',
-    'features-title': 'Everything you need to model your financial future',
+    'features-title': 'Everything essential to model your future',
     'features-subtitle':
-      'No spreadsheets. No opaque advice. Just wealth clarity in your pocket.',
+      'Wealth clarity in your pocket — no spreadsheets, no opaque advice.',
     'f1-title': 'Projected wealth',
     'f1-desc':
       'Dashboard with monthly evolution, nominal or real inflation and Time Travel to revisit the past.',
@@ -235,8 +282,6 @@ const translations = {
     'f3-desc': 'Targets with deadlines without mixing up total wealth.',
     'f4-title': 'Scenarios',
     'f4-desc': 'Optimistic, base and pessimistic bands for your future wealth.',
-    'f5-title': 'AI coach (optional)',
-    'f5-desc': 'Your own Google Gemini API key. No key, no data sent to third parties.',
     'f6-title': 'On-device privacy',
     'f6-desc': 'No account required. You control export and deletion.',
     'showcase-title': 'Launch coming soon',
@@ -245,6 +290,14 @@ const translations = {
     'perk-1': 'No spreadsheets',
     'perk-2': 'No opaque advice',
     'perk-3': 'Your data, your device',
+    'mock-title': 'Your summary',
+    'mock-sub': 'Project, play with time and watch your plan grow.',
+    'mock-vs': 'vs previous month',
+    'mock-travel': 'Time Travel',
+    'mock-tab-home': 'Home',
+    'mock-tab-plan': 'Plan',
+    'mock-tab-assets': 'Assets',
+    'mock-tab-stress': 'Scenarios',
     'viz-title': 'Year 10 projection',
     'viz-pill': 'Base scenario',
     'viz-growth': 'Annual growth',
@@ -272,8 +325,6 @@ const translations = {
     'faq-a3':
       'We are preparing the App Store and Google Play launch. Join the waitlist and we will notify you when Futurit is ready.',
     'faq-q4': 'Does the app cost money?',
-    'faq-a4':
-      'Futurit will be free at launch. The optional AI coach uses your own Google Gemini API key.',
     'cta-title': 'Want to be among the first?',
     'cta-subtitle': 'Join the waitlist for the iOS and Android launch.',
     'cta-perk-1': 'Early access to launch notifications',
@@ -298,7 +349,7 @@ const translations = {
       'Futurit is a project in development. Site content is for information only and is not financial advice or an offer.',
     'footer-rights': 'All rights reserved.',
     'cookie-text':
-      'We use essential storage (language preference) and third-party services (Formspree, fonts). See our <span class="modal-link" data-type="cookies">Cookie Policy</span>.',
+      'We use essential storage (language, consent) and, if you accept, third-party services (Formspree, fonts). See our <span class="modal-link" data-type="cookies">Cookie Policy</span>.',
     'cookie-reject': 'Reject non-essential',
     'cookie-accept': 'Accept',
     'form-success': 'Thanks! We will notify you when Futurit is available.',
@@ -311,6 +362,11 @@ const translations = {
     'tag-opt-amount': 'Optimistic €310k',
     'tag-base-amount': 'Base €265k',
     'tag-pes-amount': 'Pessimistic €218k',
+    'axis-today': 'Today',
+    'axis-3y': '+3y',
+    'axis-5y': '+5y',
+    'axis-6y': '+6y',
+    'axis-10y': '+10y',
     'asset-1': 'Index funds',
     'asset-2': 'Savings account',
     'asset-3': 'Crypto',
@@ -746,6 +802,8 @@ function initWaitlistForm() {
 
     const termsChecked = document.getElementById('terms')?.checked;
     document.getElementById('privacy-accepted-field').value = termsChecked ? 'yes' : 'no';
+    const ageField = document.getElementById('age-confirmed-field');
+    if (ageField) ageField.value = termsChecked ? 'yes' : 'no';
     document.getElementById('marketing-consent-field').value = document.getElementById('marketing')?.checked
       ? 'yes'
       : 'no';
@@ -798,6 +856,25 @@ function initWaitlistForm() {
   });
 }
 
+function initHeroStage() {
+  const stage = document.getElementById('hero-stage');
+  if (!stage || prefersReducedMotion) return;
+
+  const orb = stage.querySelector('.orb-core') || stage.querySelector('.orb-spin');
+  if (!orb) return;
+
+  stage.addEventListener('pointermove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    orb.style.transform = `translate3d(${(x * 10).toFixed(2)}px, ${(y * 8).toFixed(2)}px, 0)`;
+  });
+
+  stage.addEventListener('pointerleave', () => {
+    orb.style.transform = '';
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
@@ -819,4 +896,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCookieBanner();
   initWaitlistForm();
+  initHeroStage();
 });
