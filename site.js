@@ -860,18 +860,20 @@ function initHeroStage() {
   const stage = document.getElementById('hero-stage');
   if (!stage || prefersReducedMotion) return;
 
-  const orb = stage.querySelector('.orb-core') || stage.querySelector('.orb-spin');
+  const orb = stage.querySelector('.mascot-core') || stage.querySelector('.orb-core') || stage.querySelector('.orb-spin');
   if (!orb) return;
 
   stage.addEventListener('pointermove', (e) => {
     const rect = stage.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    orb.style.transform = `translate3d(${(x * 10).toFixed(2)}px, ${(y * 8).toFixed(2)}px, 0)`;
+    orb.style.setProperty('--parallax-x', `${(x * 10).toFixed(2)}px`);
+    orb.style.setProperty('--parallax-y', `${(y * 8).toFixed(2)}px`);
   });
 
   stage.addEventListener('pointerleave', () => {
-    orb.style.transform = '';
+    orb.style.setProperty('--parallax-x', '0px');
+    orb.style.setProperty('--parallax-y', '0px');
   });
 }
 

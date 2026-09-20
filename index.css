@@ -3342,7 +3342,7 @@ button.modal-link {
   color: var(--muted);
 }
 
-/* Orb stage */
+/* Hero mascot stage */
 .hero-stage {
   position: relative;
   width: min(460px, 100%);
@@ -3353,40 +3353,54 @@ button.modal-link {
   background: transparent;
 }
 
-.orb-glow {
+.hero-stage--mascot {
+  aspect-ratio: auto;
+  min-height: min(420px, 70vw);
+}
+
+.mascot-glow {
   position: absolute;
-  inset: 18%;
+  inset: 22% 12% 8%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(46, 224, 106, 0.32), transparent 70%);
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(46, 224, 106, 0.28), transparent 70%);
+  filter: blur(36px);
   z-index: 0;
   animation: orb-pulse 5.5s ease-in-out infinite;
   pointer-events: none;
 }
 
-.orb-core {
+.mascot-core {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
-  transition: transform 0.4s var(--ease);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+  animation: mascot-bob 4.8s ease-in-out infinite;
+  will-change: transform;
 }
 
-.orb-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.mascot-hero-img {
+  width: min(420px, 92%);
+  height: auto;
   display: block;
+  object-fit: contain;
   background: transparent;
   user-select: none;
   pointer-events: none;
-  /* No drop-shadow plate — avoids visible square */
-  filter: none;
+  filter: drop-shadow(0 28px 48px rgba(0, 0, 0, 0.45));
+}
+
+@keyframes mascot-bob {
+  0%, 100% { transform: translate3d(var(--parallax-x), calc(var(--parallax-y) + 0px), 0); }
+  50% { transform: translate3d(var(--parallax-x), calc(var(--parallax-y) - 14px), 0); }
 }
 
 .orbit-pins {
   position: absolute;
-  inset: 10%;
+  inset: 8% 4% 18%;
   z-index: 2;
   pointer-events: none;
   border-radius: 50%;
@@ -3431,13 +3445,13 @@ button.modal-link {
 
 .float-chip--balance {
   left: 0;
-  bottom: 14%;
+  bottom: 10%;
   min-width: 11rem;
 }
 
 .float-chip--goal {
   right: 0;
-  top: 12%;
+  top: 8%;
   text-align: right;
   animation-delay: -1.5s;
 }
@@ -3594,9 +3608,11 @@ button.modal-link {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .orb-core,
+  .mascot-core,
+  .mascot-glow,
   .orbit-pins,
   .orbit-pin,
+  .orb-core,
   .orb-img,
   .orb-glow,
   .float-chip {
