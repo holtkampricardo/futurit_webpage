@@ -9,9 +9,10 @@
   --ink: #f3f7f4;
   --ink-soft: #c5d4cb;
   --muted: #7f9588;
-  --accent: #2ee06a;
-  --accent-soft: #7dffab;
-  --accent-glow: rgba(46, 224, 106, 0.38);
+  /* Accent = brand violet (logo «it» + app); green stays for “up/positive” only */
+  --accent: #8b5cf6;
+  --accent-soft: #c4b5fd;
+  --accent-glow: rgba(139, 92, 246, 0.42);
   --positive: #2ee06a;
   --positive-soft: rgba(46, 224, 106, 0.14);
   --caution: #f0c14a;
@@ -132,7 +133,7 @@ body {
   height: 2px;
   width: 0%;
   z-index: 100;
-  background: linear-gradient(90deg, var(--accent), var(--positive));
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
   box-shadow: 0 0 12px var(--accent-glow);
   pointer-events: none;
 }
@@ -256,8 +257,8 @@ body {
   gap: 0.5rem;
   padding: 0.85rem 1.4rem;
   border-radius: 999px;
-  border: 1px solid rgba(46, 224, 106, 0.55);
-  background: rgba(8, 40, 28, 0.72);
+  border: 1px solid rgba(139, 92, 246, 0.55);
+  background: rgba(28, 18, 52, 0.72);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -265,31 +266,31 @@ body {
   cursor: pointer;
   transition: transform 0.25s var(--ease), box-shadow 0.25s, background 0.25s;
   box-shadow:
-    0 0 0 1px rgba(46, 224, 106, 0.15),
-    0 0 28px rgba(46, 224, 106, 0.22),
+    0 0 0 1px rgba(139, 92, 246, 0.18),
+    0 0 28px rgba(139, 92, 246, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  background: rgba(12, 56, 40, 0.88);
+  background: rgba(40, 26, 72, 0.9);
   box-shadow:
-    0 0 0 1px rgba(46, 224, 106, 0.35),
-    0 0 40px rgba(46, 224, 106, 0.35),
+    0 0 0 1px rgba(139, 92, 246, 0.4),
+    0 0 40px rgba(139, 92, 246, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .btn-glow {
   box-shadow:
-    0 0 0 1px rgba(46, 224, 106, 0.25),
-    0 0 32px rgba(46, 224, 106, 0.28),
+    0 0 0 1px rgba(139, 92, 246, 0.28),
+    0 0 32px rgba(139, 92, 246, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .btn-shimmer {
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(14, 58, 42, 0.95) 0%, rgba(8, 40, 28, 0.85) 55%, rgba(20, 70, 50, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(52, 32, 96, 0.95) 0%, rgba(28, 18, 52, 0.88) 55%, rgba(62, 40, 110, 0.95) 100%);
 }
 
 .btn-shimmer::after {
@@ -499,7 +500,7 @@ body {
   font-family: var(--font-display);
   font-weight: 700;
   color: var(--accent-soft);
-  background: linear-gradient(135deg, var(--accent-soft), var(--positive));
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1648,8 +1649,8 @@ body {
 .mini-chart span {
   flex: 1;
   border-radius: 0.35rem 0.35rem 0.15rem 0.15rem;
-  background: linear-gradient(180deg, #7dffab 0%, rgba(46, 224, 106, 0.55) 45%, rgba(26, 80, 55, 0.35) 100%);
-  box-shadow: 0 0 12px rgba(46, 224, 106, 0.15);
+  background: linear-gradient(180deg, #c4b5fd 0%, rgba(139, 92, 246, 0.55) 45%, rgba(46, 30, 90, 0.35) 100%);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
 }
 
 .mini-scenarios {
@@ -2180,7 +2181,7 @@ body {
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), var(--positive), transparent);
+  background: linear-gradient(90deg, transparent, var(--accent), var(--accent-soft), transparent);
   opacity: 0.5;
 }
 
