@@ -890,12 +890,12 @@ body {
 
 .excel-cell {
   padding: 0.55rem 0.65rem;
-  background: #1a2224;
+  background: #1a1a24;
   color: #cbd5e1;
 }
 
 .excel-cell.head {
-  background: #24302c;
+  background: #242430;
   color: #f8fafc;
   font-weight: 600;
 }
@@ -3426,7 +3426,7 @@ button.modal-link {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(8, 28, 22, 0.88);
+  background: rgba(21, 18, 42, 0.88);
   border: 1px solid rgba(139, 92, 246, 0.35);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(139, 92, 246, 0.1);
   color: var(--accent-soft);
@@ -3448,7 +3448,7 @@ button.modal-link {
   z-index: 3;
   padding: 0.9rem 1.05rem;
   border-radius: 1rem;
-  background: rgba(6, 28, 22, 0.82);
+  background: rgba(20, 20, 31, 0.88);
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(16px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
@@ -3550,7 +3550,7 @@ button.modal-link {
 .showcase-panel,
 .cta-card,
 .faq-item {
-  background: rgba(8, 32, 26, 0.55);
+  background: rgba(20, 20, 31, 0.72);
   border-color: rgba(255, 255, 255, 0.08);
 }
 
@@ -3569,7 +3569,7 @@ button.modal-link {
 
 .hero-disclaimer-bar {
   border-top-color: rgba(255, 255, 255, 0.06);
-  color: rgba(127, 149, 136, 0.9);
+  color: rgba(148, 163, 184, 0.9);
 }
 
 @media (max-width: 1023px) {
