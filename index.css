@@ -2,21 +2,22 @@
 
 :root {
   color-scheme: dark;
-  --bg: #041a16;
-  --bg-elevated: #07241e;
-  --surface: #0a2c24;
-  --surface-hover: #0e352c;
-  --ink: #f3f7f4;
-  --ink-soft: #c5d4cb;
-  --muted: #7f9588;
-  /* Accent = brand violet (logo «it» + app); green stays for “up/positive” only */
+  /* Match app: near-black + violet (not forest green) */
+  --bg: #09090f;
+  --bg-elevated: #15122a;
+  --surface: #14141f;
+  --surface-hover: #1a1a28;
+  --ink: #f8fafc;
+  --ink-soft: #cbd5e1;
+  --muted: #94a3b8;
+  /* Accent = brand violet; green only for “up/positive” */
   --accent: #8b5cf6;
   --accent-soft: #c4b5fd;
   --accent-glow: rgba(139, 92, 246, 0.42);
   --positive: #2ee06a;
   --positive-soft: rgba(46, 224, 106, 0.14);
   --caution: #f0c14a;
-  --coach: #8b9cff;
+  --coach: #a78bfa;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.14);
   --radius: 1rem;
@@ -73,7 +74,7 @@ body {
 /* Grain overlay removed — fixed full-screen layer was costly for little visual gain */
 
 ::selection {
-  background: rgba(45, 212, 168, 0.35);
+  background: rgba(139, 92, 246, 0.35);
   color: var(--ink);
 }
 
@@ -123,7 +124,7 @@ body {
 
 .header-nav a.is-active {
   color: var(--ink);
-  background: rgba(45, 212, 168, 0.12);
+  background: rgba(139, 92, 246, 0.12);
 }
 
 .scroll-progress {
@@ -149,7 +150,7 @@ body {
   padding: 0.55rem 0.75rem 0.55rem 0.9rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(4, 26, 22, 0.88);
+  background: rgba(9, 9, 15, 0.88);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
 }
 
@@ -359,7 +360,7 @@ body {
   height: 55vw;
   top: -15%;
   left: -10%;
-  background: radial-gradient(circle, rgba(45, 212, 168, 0.28), transparent 68%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.28), transparent 68%);
 }
 
 .hero-aurora::after {
@@ -367,7 +368,7 @@ body {
   height: 45vw;
   right: -8%;
   bottom: 5%;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.2), transparent 70%);
 }
 
 .hero-spotlight {
@@ -443,7 +444,7 @@ body {
   height: 0.42rem;
   border-radius: 50%;
   background: var(--positive);
-  box-shadow: 0 0 12px rgba(52, 211, 153, 0.65);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.65);
   animation: pulse-dot 2.2s ease-in-out infinite;
 }
 
@@ -839,7 +840,7 @@ body {
 .compare-excel {
   left: 0;
   right: 0;
-  background: #12181a;
+  background: #14141f;
   z-index: 1;
 }
 
@@ -848,7 +849,7 @@ body {
   left: var(--compare-pct, 50%);
   width: calc(100% - var(--compare-pct, 50%));
   right: auto;
-  background: linear-gradient(160deg, #0a2820, #041a16);
+  background: linear-gradient(160deg, #15122a, #09090f);
   overflow: hidden;
 }
 
@@ -890,12 +891,12 @@ body {
 .excel-cell {
   padding: 0.55rem 0.65rem;
   background: #1a2224;
-  color: #c5d4cb;
+  color: #cbd5e1;
 }
 
 .excel-cell.head {
   background: #24302c;
-  color: #f3f7f4;
+  color: #f8fafc;
   font-weight: 600;
 }
 
@@ -1058,7 +1059,7 @@ body {
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(4, 26, 22, 0.88);
+  background: rgba(9, 9, 15, 0.88);
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.08em;
@@ -1445,7 +1446,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(124, 106, 239, 0.5), rgba(52, 211, 153, 0.25), transparent 60%);
+  background: linear-gradient(135deg, rgba(124, 106, 239, 0.5), rgba(167, 139, 250, 0.25), transparent 60%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -1503,8 +1504,8 @@ body {
   height: 2.25rem;
   margin-bottom: 0.85rem;
   border-radius: 0.65rem;
-  border: 1px solid rgba(46, 224, 106, 0.28);
-  background: rgba(46, 224, 106, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  background: rgba(139, 92, 246, 0.1);
   color: var(--accent-soft);
 }
 
@@ -1530,9 +1531,9 @@ body {
   gap: 0.65rem;
   justify-content: flex-start !important;
   background:
-    radial-gradient(ellipse 80% 60% at 90% 10%, rgba(46, 224, 106, 0.12), transparent 55%),
+    radial-gradient(ellipse 80% 60% at 90% 10%, rgba(139, 92, 246, 0.12), transparent 55%),
     rgba(0, 0, 0, 0.28);
-  border-color: rgba(46, 224, 106, 0.14);
+  border-color: rgba(139, 92, 246, 0.14);
 }
 
 .bento-dash-top {
@@ -1566,8 +1567,8 @@ body {
   margin-top: 0.15rem;
   padding: 0.28rem 0.55rem;
   border-radius: 999px;
-  border: 1px solid rgba(46, 224, 106, 0.35);
-  background: rgba(46, 224, 106, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(139, 92, 246, 0.12);
   color: var(--accent-soft);
   font-size: 0.72rem;
   font-weight: 700;
@@ -1706,8 +1707,8 @@ body {
 }
 
 .tag-opt {
-  background: rgba(46, 224, 106, 0.08);
-  border-color: rgba(46, 224, 106, 0.28);
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.28);
   color: var(--positive);
 }
 
@@ -1943,8 +1944,8 @@ body {
 .viz-pill {
   padding: 0.28rem 0.7rem;
   border-radius: 999px;
-  border: 1px solid rgba(46, 224, 106, 0.35);
-  background: rgba(46, 224, 106, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(139, 92, 246, 0.08);
   font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 600;
@@ -2757,7 +2758,7 @@ button.modal-link {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(9, 9, 15, 0.55) 0%, rgba(9, 9, 15, 0.82) 55%, var(--bg) 100%),
-    radial-gradient(ellipse 70% 50% at 70% 40%, rgba(45, 212, 168, 0.12), transparent 60%);
+    radial-gradient(ellipse 70% 50% at 70% 40%, rgba(139, 92, 246, 0.12), transparent 60%);
 }
 
 .hero-layout--brand {
@@ -2805,7 +2806,7 @@ button.modal-link {
   width: 70%;
   height: 55%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(45, 212, 168, 0.22), transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.22), transparent 70%);
   filter: blur(28px);
   z-index: 0;
 }
@@ -3074,7 +3075,7 @@ button.modal-link {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
-  background: #041a16;
+  background: #09090f;
 }
 
 .mascot-band-img {
@@ -3177,7 +3178,7 @@ button.modal-link {
 
 .header-shell--slim {
   border-radius: 1rem;
-  background: rgba(4, 26, 22, 0.78);
+  background: rgba(9, 9, 15, 0.78);
   backdrop-filter: blur(16px);
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: none;
@@ -3187,7 +3188,7 @@ button.modal-link {
 
 .site-header.is-scrolled .header-shell--slim {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-  border-color: rgba(46, 224, 106, 0.12);
+  border-color: rgba(139, 92, 246, 0.12);
 }
 
 .hero--premium {
@@ -3197,8 +3198,8 @@ button.modal-link {
   padding: 6.75rem var(--page-gutter) 1.25rem;
   overflow: visible;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 55%, rgba(46, 224, 106, 0.12), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 15% 20%, rgba(20, 80, 60, 0.35), transparent 50%),
+    radial-gradient(ellipse 80% 60% at 70% 55%, rgba(139, 92, 246, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 15% 20%, rgba(88, 28, 135, 0.35), transparent 50%),
     var(--bg);
 }
 
@@ -3207,8 +3208,8 @@ button.modal-link {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 78% 62%, rgba(46, 224, 106, 0.16), transparent 38%),
-    radial-gradient(circle at 20% 80%, rgba(8, 60, 45, 0.5), transparent 45%);
+    radial-gradient(circle at 78% 62%, rgba(139, 92, 246, 0.16), transparent 38%),
+    radial-gradient(circle at 20% 80%, rgba(46, 16, 101, 0.45), transparent 45%);
 }
 
 .hero-grain {
@@ -3426,8 +3427,8 @@ button.modal-link {
   display: grid;
   place-items: center;
   background: rgba(8, 28, 22, 0.88);
-  border: 1px solid rgba(46, 224, 106, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(46, 224, 106, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(139, 92, 246, 0.1);
   color: var(--accent-soft);
   backdrop-filter: blur(8px);
   animation: orbit-spin 32s linear infinite reverse;
@@ -3556,13 +3557,13 @@ button.modal-link {
 .bento-card:hover,
 .process-step:hover,
 .stat-card:hover {
-  border-color: rgba(46, 224, 106, 0.22);
-  box-shadow: 0 0 0 1px rgba(46, 224, 106, 0.06), 0 20px 50px rgba(0, 0, 0, 0.25);
+  border-color: rgba(139, 92, 246, 0.22);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.06), 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 .mascot-band {
   background:
-    radial-gradient(ellipse 50% 80% at 12% 50%, rgba(46, 224, 106, 0.08), transparent 55%),
+    radial-gradient(ellipse 50% 80% at 12% 50%, rgba(139, 92, 246, 0.08), transparent 55%),
     var(--bg);
 }
 
